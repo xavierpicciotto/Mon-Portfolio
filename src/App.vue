@@ -9,7 +9,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    background-image: -webkit-linear-gradient(0deg,#766dff 0%,#88f3ff 100%);
+    background-image: -webkit-linear-gradient(0deg, #766dff 0%, #0296ff70 100%);
   }
 
   #app {
