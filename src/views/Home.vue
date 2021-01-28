@@ -8,8 +8,12 @@
           <p>Développeur Web</p>
         </div>
         <div class="link-container">
-          <i class="fab fa-github"></i>
-          <i class="fab fa-linkedin"></i>
+          <a href="https://github.com/xavierpicciotto?tab=repositories" target="blank">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/xavier-picciotto-developpeur-web/" target="blank">
+            <i class="fab fa-linkedin"></i>
+          </a>
         </div>
       </div>
     </header>
@@ -37,7 +41,7 @@
           <p class="police_prompt">Je suis récemment diplômé chez OpenClassrooms d'un titre RNCP (Bac +2) de développeur
             Web Junior. Cette
             formation en autonomie m’a permis d'acquérir des connaissances dans le développement web notamment sur les
-            langages <strong>HTML, CSS, Javascript, MySQL</strong> et le framework <strong>Vue</strong>. je suis aussi
+            langages <strong>HTML, CSS, Javascript, MySQL, référencement</strong> et le framework <strong>Vue</strong>. je suis aussi
             ouvert à l'apprentissage de nouveaux
             langages et technologies.</p>
           <p class="police_prompt">Je suis capable de créer et améliorer des sites internet, d'utiliser des API.
@@ -52,7 +56,7 @@
           <h3 class="police_lobster">Mon CV</h3>
           <div class="img-box">
             <img src="../assets/CV.jpg" alt="Mon CV de développeur web format jpg">
-            <a href="../assets/Xavier-Picciotto_CV.pdf" download class="police_prompt">Télécharger</a>
+            <a href="../assets/Xavier-Picciotto_CV.pdf" download class="police_prompt">Télécharger <i class="fas fa-download"></i></a>
           </div>
         </div>
         <div class="contact police_lobster">Contactez moi</div>
@@ -82,6 +86,8 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    border-radius: 0 0 20% 20%;
+
 
     .container {
       display: flex;
@@ -95,6 +101,7 @@
       font-size: 2vw;
       margin: auto;
       text-shadow: 2px 5px 5px black;
+      animation: pirouette 10s infinite alternate ease-in-out;
     }
 
     .link-container {
@@ -104,6 +111,12 @@
         color: white;
         margin: 40px;
         font-size: 3vw;
+        text-shadow: 3px 3px rgba(0, 0, 0, 0.534);
+        transition: 0.3s ease-out;
+        &:hover{
+         transform: translate(0px, -7px);
+         text-shadow: 3px 10px rgba(0, 0, 0, 0.534);
+        }
       }
     }
 
@@ -127,7 +140,7 @@
     .point {
       width: 5px;
       height: 5px;
-      margin: 7px 0;
+      margin: 10px 0;
       border-radius: 50%;
       background-color: rgb(255, 255, 255);
       box-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 15px, #73d8f6 0px 0px 20px, #3e9bf1 0px 0px 30px, #36bee7 0px 0px 40px, #4f68f6 0px 0px 50px, #fafafa 0px 0px 75px;
@@ -147,11 +160,13 @@
   }
 
   .skills {
-    margin: 2% 2%;
+    margin: auto 5%;
 
     h2 {
       text-align: center;
-      font-size: 2vw;
+      font-size: 2.5em;
+      margin-top: auto;
+      margin-bottom: 5%;
     }
 
     .flex-container {
@@ -170,7 +185,7 @@
         width: 100px;
         height: 100px;
         border-radius: 15%;
-        box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.698);
+        box-shadow: 4px 6px 3px rgba(0, 0, 0, 0.37);
       }
     }
   }
@@ -180,14 +195,22 @@
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.623);
 
     .presentation {
-      margin: 5% 5%;
+      margin: 2% 10%;
     }
 
     .cv {
-      margin: 5% 5%;
+      margin: 5% 10%;
 
       .img-box {
         width: 200px;
+        height: auto;
+        a{
+          text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.493);
+        }
+
+        i {
+          animation: jumps 0.7s infinite alternate-reverse ease-in-out;
+        }
 
         img {
           width: 100%;
@@ -196,6 +219,7 @@
           box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.493);
           cursor: pointer;
           transition: 0.3s ease-in-out;
+
           &:hover {
             transform: translate(10px, -5px);
             box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.493);
@@ -213,6 +237,24 @@
 
     to {
       box-shadow: #FFF 0px 0px 5px, #1c24d7 0px 0px 10px, #FFF 0px 0px 15px, #73d8f6 0px 0px 20px, #3e9bf1 0px 0px 30px, #36bee7 0px 0px 40px, #4f68f6 0px 0px 50px, #fafafa 0px 0px 75px;
+    }
+  }
+  @keyframes jumps {
+    from {
+      transform: translate(0px , 0px);
+    }
+
+    to {
+      transform: translate(0px , 7px);
+    }
+  }
+    @keyframes pirouette {
+    from {
+      transform: rotateX(0deg);
+    }
+
+    to {
+      transform: rotateX(360deg);
     }
   }
 </style>
