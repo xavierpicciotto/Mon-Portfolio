@@ -21,4 +21,8 @@
     background-color: rgba(12, 2, 3, 0.068);
     color: rgb(255, 255, 255); 
   }
+  a{
+    text-decoration: none;
+    color: unset;
+  }
 </style>
