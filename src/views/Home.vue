@@ -61,16 +61,14 @@
         </div>
         <div class="contact ">
           <h3 class="police_lobster">Contactez moi</h3>
-          <form class="form_contact police_prompt" id="form_contact">
+          <form class="form_contact police_prompt" id="form_contact" action="mailto:xav06@live.fr?subject=Contact portfolio" name="envoi" method=POST enctype="text/plain">
             <label for="firstName">Prénom* :</label>
-            <input v-model="contact.firstName" type="text" name="firstName" placeholder="Prénom (requis)" id="firstName"
-              pattern="[a-zA-z/ /-]+" required>
+            <input v-model="contact.firstName" type="text" name="firstName" placeholder="Prénom (requis)" id="firstName" required>
             <label for="lastName">Nom :</label>
-            <input v-model="contact.lastName" type="text" name="lastName" placeholder="Nom (facultatif)" id="lastName"
-              pattern="[a-zA-z/ /-]+">
+            <input v-model="contact.lastName" type="text" name="lastName" placeholder="Nom (facultatif)" id="lastName">
             <label for="entreprise">Entreprise :</label>
             <input v-model="contact.entreprise" type="text" name="entreprise" id="entreprise"
-              placeholder="Entreprise (facultatif)" pattern="[a-zA-z/ /-]+">
+              placeholder="Entreprise (facultatif)">
             <label for="email">E-mail* :</label>
             <input v-model="contact.email" type="email" name="email" placeholder="exemple@domaine.com (requis)"
               id="email" required>
@@ -335,7 +333,7 @@
       border-radius: 10px;
 
       .name {
-        font-size: 3.5vh;
+        font-size: 3.25vh;
 
         h1 {
           margin: 0;
@@ -345,11 +343,13 @@
       img {
         margin-top: 5%;
         width: 30%;
+        max-width: 180px;
       }
 
       .link-container {
         width: 100%;
         margin-bottom: 1%;
+
         i {
           font-size: 2.5em;
         }
@@ -375,18 +375,22 @@
       }
 
     }
-    .personal{
-      .contact{
-        form{
-         margin: auto; 
+
+    .personal {
+      .contact {
+        form {
+          margin: auto;
         }
-        label{
+
+        label {
           margin: auto 0;
         }
-        input{
+
+        input {
           margin: 2% 0;
         }
-        textarea{
+
+        textarea {
           margin: 2% 0;
         }
       }
@@ -434,17 +438,4 @@
       box-shadow: 2px 10px 3px rgba(0, 0, 0, 0.424);
     }
   }
-  @-webkit-keyframes tracking-in-expand {
-  0% {
-    letter-spacing: -0.5em;
-    opacity: 0;
-  }
-  40% {
-    opacity: 0.6;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
 </style>
