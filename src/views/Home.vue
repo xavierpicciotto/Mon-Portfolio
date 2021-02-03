@@ -1,18 +1,21 @@
 <template>
   <div class="home">
     <header>
-      <img alt="Une photo de xavier picciotto" src="../assets/Me.jpg">
-      <div class="name">
-        <h1 class="police_lobster">Xavier Picciotto</h1>
-        <p>Développeur Web</p>
-      </div>
-      <div class="link-container">
+      <nav class="link-container">
+        <a href="#skills">Skills</a>
+        <a href="#cv">CV</a>
+        <a style="display: none" href="#projets">Projets</a>
+        <a href="#contact">Contact</a>
         <a href="https://github.com/xavierpicciotto?tab=repositories" target="blank">
           <i class="fab fa-github"></i>
         </a>
         <a href="https://www.linkedin.com/in/xavier-picciotto-developpeur-web/" target="blank">
           <i class="fab fa-linkedin"></i>
         </a>
+      </nav>
+      <div class="name">
+        <h1 class="police_lobster">Xavier Picciotto</h1>
+        <p>Développeur Web</p>
       </div>
     </header>
     <div class="animed-point">
@@ -21,8 +24,36 @@
       <div class="point"></div>
     </div>
     <main>
-      <section class="skills">
-        <h2 class="police_lobster">Mes compétences en tant que Développeur Web</h2>
+      <div class="presentation">
+        <h3 class="police_lobster">Mon profil</h3>
+        <div class="presentation_box">
+          <img alt="Une photo de xavier picciotto" src="../assets/Me.jpg">
+          <div class="presentaion_text">
+            <p class="police_prompt">Je suis récemment diplômé chez OpenClassrooms d'un titre RNCP (Bac +2) de
+              développeur
+              Web Junior. Cette
+              formation en autonomie m’a permis d'acquérir des connaissances dans le développement web notamment sur
+              les
+              langages <strong>HTML, CSS / SASS, Javascript, MySQL</strong>, le framework<strong> Vue </strong>et
+              le<strong> SEO</strong>.
+            </p>
+            <p class="police_prompt">Je suis capable de créer des <strong>serveurs</strong> avec Javascript et
+              d'utiliser
+              des<strong> API</strong>.
+              Implémenter une maquette ou template en<strong> site web</strong>.
+              Concevoir et
+              administrer des<strong> bases de données</strong>.<br> Je suis une personne <strong>calme</strong> avec un
+              bon sens de la
+              déduction et
+              de <strong>l'adaptation</strong>.
+              J'aime particulièrement le <strong>travail en équipe</strong> et coopératif. Passionné de vulgarisation
+              scientifique dans
+              tous les domaines depuis mon plus jeune âge.</p>
+          </div>
+        </div>
+      </div>
+      <section id="skills" class="skills">
+        <h3 class="police_lobster">Mes compétences en tant que Développeur Web</h3>
         <div class="flex-container">
           <div class="skills_box"><img src='../assets/html.jpg'></div>
           <div class="skills_box"><img src='../assets/css.png'></div>
@@ -33,37 +64,28 @@
           <div class="skills_box"><img src='../assets/mongodb.jpg'></div>
         </div>
       </section>
+      <section class="projets" id="projets">
+        <h3 style="display: none">Mes Projets (en cours de construction :)</h3>
+      </section>
       <section class="personal">
-        <div class="presentation">
-          <h3 class="police_lobster">Mon profil</h3>
-          <p class="police_prompt">Je suis récemment diplômé chez OpenClassrooms d'un titre RNCP (Bac +2) de développeur
-            Web Junior. Cette
-            formation en autonomie m’a permis d'acquérir des connaissances dans le développement web notamment sur les
-            langages <strong>HTML, CSS, Javascript, MySQL, référencement</strong> et le framework <strong>Vue</strong>.
-            je suis aussi
-            ouvert à l'apprentissage de nouveaux
-            langages et technologies.</p>
-          <p class="police_prompt">Je suis capable de créer et améliorer des sites internet, d'utiliser des API.
-            Concevoir et
-            gérer des bases de données. Je suis une personne <strong>calme</strong> avec un bon sens de la déduction et
-            de <strong>l'adaptation</strong>.
-            J'aime particulièrement le <strong>travail en équipe</strong> et coopératif. Passionné de vulgarisation
-            scientifique dans
-            tous les domaines depuis mon plus jeune âge.</p>
-        </div>
-        <div class="cv">
+        <div id="cv" class="cv">
           <h3 class="police_lobster">Mon CV</h3>
           <div class="img-box">
-            <img src="../assets/CV.jpg" alt="Mon CV de développeur web format jpg">
-            <a href="../assets/Xavier-Picciotto_CV.pdf" download class="police_prompt">Télécharger <i
-                class="fas fa-download"></i></a>
+            <a href="../cv.pdf" target="blank">
+              <img src="../assets/CV.jpg" alt="Mon CV de développeur web format jpg">
+            </a>
+            <a href="../cv.pdf" download="Xavier_picciotto_CV.pdf"><button type="button"
+                class="police_prompt">Télécharger <i class="fas fa-download"></i></button></a>
+
           </div>
         </div>
-        <div class="contact ">
+        <div id="contact" class="contact ">
           <h3 class="police_lobster">Contactez moi</h3>
-          <form class="form_contact police_prompt" id="form_contact" action="mailto:xav06@live.fr?subject=Contact portfolio" name="envoi" method=POST enctype="text/plain">
+          <form class="form_contact police_prompt" id="form_contact"
+            action="mailto:xav06@live.fr?subject=Contact portfolio" name="envoi" method=POST enctype="text/plain">
             <label for="firstName">Prénom* :</label>
-            <input v-model="contact.firstName" type="text" name="firstName" placeholder="Prénom (requis)" id="firstName" required>
+            <input v-model="contact.firstName" type="text" name="firstName" placeholder="Prénom (requis)" id="firstName"
+              required>
             <label for="lastName">Nom :</label>
             <input v-model="contact.lastName" type="text" name="lastName" placeholder="Nom (facultatif)" id="lastName">
             <label for="entreprise">Entreprise :</label>
@@ -85,13 +107,19 @@
 
 <script>
   import Contact from '../models/contact';
+
   export default {
     name: 'Home',
     data() {
       return {
         contact: new Contact('', '', '', '', ''),
-        successfull: false
       }
+    },
+    components: {
+
+    },
+    methods: {
+
     }
   }
 </script>
@@ -106,55 +134,63 @@
   }
 
   header {
-    background-image: url('../assets/cloud.jpg');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    border-radius: 0 0 20% 20%;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
 
     .name {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      font-size: 2vw;
-      margin: auto;
+      text-align: center;
+      margin: 2.5%;
+      font-size: 2.5vw;
       text-shadow: 2px 5px 5px black;
       animation: pendulum 2s infinite alternate ease-in-out;
     }
 
     .link-container {
-      width: 14%;
+      width: auto;
       display: flex;
-      justify-content: space-around;
+      justify-content: space-evenly;
+      align-items: center;
+      font-family: sans-serif;
+      background-color: black;
 
-      i {
-        font-size: 3vw;
-        text-shadow: 3px 3px rgba(0, 0, 0, 0.534);
-        transition: 0.3s ease-out;
+      a {
+        font-size: 40px;
+        transition: 0.3s ease-in-out;
 
         &:hover {
-          transform: translate(0px, -7px);
-          text-shadow: 3px 10px rgba(0, 0, 0, 0.534);
+          transform: rotate(360deg);
+
         }
       }
     }
+  }
+
+  .presentation {
+    margin: 5% 10%;
+    font-size: 1.7em;
+    text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.623);
+
+    h3 {
+      font-size: 3vw;
+    }
 
     img {
-      margin: 0;
-      min-width: 100px;
-      width: 15%;
+      float: left;
+      width: 35%;
+      min-width: 250px;
       height: auto;
-      border-radius: 50%;
-      box-shadow: 3px 3px 2px 2px rgba(0, 0, 0, 0.377);
+      margin-right: 5%;
+      box-shadow: 0px 5px 50px 5px rgba(255, 255, 255, 0.267);
+    }
+
+    p {
+      text-align: left;
     }
   }
 
   .animed-point {
     width: 100%;
+    height: 250px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -162,33 +198,33 @@
     margin: 10px 0;
 
     .point {
-      width: 5px;
-      height: 5px;
-      margin: 10px 0;
+      width: 6px;
+      height: 6px;
+      margin: auto;
       border-radius: 50%;
       background-color: rgb(255, 255, 255);
       box-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 15px, #73d8f6 0px 0px 20px, #3e9bf1 0px 0px 30px, #36bee7 0px 0px 40px, #4f68f6 0px 0px 50px, #fafafa 0px 0px 75px;
       animation-name: blinks;
-      animation-duration: 1s;
+      animation-duration: 0.6s;
       animation-iteration-count: infinite;
       animation-timing-function: ease-in-out;
     }
 
     .point:nth-child(1) {
-      animation-delay: 0.3s;
+      animation-delay: 0.2s;
     }
 
     .point:nth-child(2) {
-      animation-delay: 0.6s;
+      animation-delay: 0.4s;
     }
   }
 
   .skills {
     margin: auto 5%;
 
-    h2 {
+    h3 {
       text-align: center;
-      font-size: 2.5em;
+      font-size: 3vw;
       margin-top: auto;
       margin-bottom: 5%;
     }
@@ -220,22 +256,18 @@
 
   .personal {
     font-size: 1.7em;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.623);
-
-    .presentation {
-      margin: 5% 10%;
-    }
+    text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.623);
 
     .cv {
       margin: 5% 10%;
 
+      h3 {
+        font-size: 3vw;
+      }
+
       .img-box {
         width: 200px;
         height: auto;
-
-        a {
-          text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.493);
-        }
 
         i {
           animation: jumps 0.7s infinite alternate-reverse ease-in-out;
@@ -254,12 +286,43 @@
             box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.493);
           }
         }
+
+        button {
+          box-shadow: inset 0px -3px 7px 0px #29bbff;
+          background: linear-gradient(to bottom, #2dabf9 5%, #0688fa 100%);
+          background-color: #2dabf9;
+          border-radius: 3px;
+          border: none;
+          display: inline-block;
+          cursor: pointer;
+          color: #ffffff;
+          font-family: Arial;
+          font-size: 21px;
+          font-weight: bold;
+          padding: 8px 23px;
+          text-decoration: none;
+          text-shadow: 0px 1px 0px #263666;
+
+          &:hover {
+            background: linear-gradient(to bottom, #0688fa 5%, #2dabf9 100%);
+            background-color: #0688fa;
+          }
+
+          &:active {
+            position: relative;
+            top: 1px;
+          }
+        }
       }
     }
   }
 
   .contact {
     margin: 5% 10%;
+
+    h3 {
+      font-size: 3vw;
+    }
 
     form {
       margin: auto 5%;
@@ -330,44 +393,67 @@
   @media only screen and (max-width: 900px) {
     header {
       flex-direction: column;
-      border-radius: 10px;
 
       .name {
-        font-size: 3.25vh;
+        font-size: 3.50vh;
+        margin-top: 5%;
 
         h1 {
           margin: 0;
         }
-      }
 
-      img {
-        margin-top: 5%;
-        width: 30%;
-        max-width: 180px;
+        p {
+          font-size: 4.5vh;
+        }
       }
 
       .link-container {
-        width: 100%;
-        margin-bottom: 1%;
+        padding: 1%;
 
-        i {
-          font-size: 2.5em;
+        a {
+          font-size: 20px;
         }
       }
     }
 
+    .presentation {
+    margin: 5% 2%;
+      .presentation_box {
+        text-align: center;
+      }
+      img{
+        float: none;
+        margin: 0;
+        width: 100%;
+        max-width: 400px;
+        border-radius: 10px;
+      }
+      h3 {
+        font-size: 30px;
+      }
+    }
+
+
     .animed-point {
+      height: auto;
+      flex-direction: row;
+      margin: 0;
+
       .point {
-        margin: 5px auto;
+        width: 4px;
+        height: 4px;
       }
     }
 
     .skills {
-      h2 {
-        font-size: 4.5vh;
+      margin: auto;
+
+      h3 {
+        font-size: 30px;
       }
 
       .skills_box {
+        margin: 10px 15px;
         img {
           width: 65px;
           height: 65px;
@@ -377,7 +463,21 @@
     }
 
     .personal {
+      h3 {
+        font-size: 30px;
+      }
+      .cv{
+        margin: 5% 2%;
+        h3{
+          font-size: 30px;
+        }
+        .img-box{
+          margin: auto;
+          text-align: center;
+        }
+      }
       .contact {
+        margin: 5% 4%;
         form {
           margin: auto;
         }
