@@ -10,6 +10,7 @@
     margin: 0;
     padding: 0;
     background-image: -webkit-linear-gradient(0deg, #766dff 0%, #0296ff70 100%);
+    border-top: 10px solid black;
   }
 
   #app {
@@ -18,7 +19,6 @@
     height: 100%;
     margin: 0;
     padding: 0;
-    background-color: rgba(12, 2, 3, 0.068);
     color: rgb(255, 255, 255); 
   }
   a{
