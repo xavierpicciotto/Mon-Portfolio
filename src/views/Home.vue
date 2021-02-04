@@ -4,7 +4,7 @@
       <nav class="link-container">
         <a href="#skills">Skills</a>
         <a href="#cv">CV</a>
-        <a style="display: none" href="#projets">Projets</a>
+        <a href="#projets">Projets</a>
         <a href="#contact">Contact</a>
         <a href="https://github.com/xavierpicciotto?tab=repositories" target="blank">
           <i class="fab fa-github"></i>
@@ -25,11 +25,12 @@
     </div>
     <main>
       <div class="presentation">
-        <h3 class="police_lobster">Mon profil</h3>
+        <h3 data-aos="fade-right" class="police_lobster">Mon profil</h3>
         <div class="presentation_box">
-          <img alt="Une photo de xavier picciotto" src="../assets/Me.jpg">
+          <img data-aos="zoom-in-up" alt="Une photo de xavier picciotto" src="../assets/Me.jpg">
           <div class="presentaion_text">
-            <p class="police_prompt">Je suis récemment diplômé chez OpenClassrooms d'un titre RNCP (Bac +2) de
+            <p data-aos="fade-up-left" class="police_prompt">Je suis récemment diplômé chez OpenClassrooms d'un titre
+              RNCP (Bac +2) de
               développeur
               Web Junior. Cette
               formation en autonomie m’a permis d'acquérir des connaissances dans le développement web notamment sur
@@ -37,7 +38,8 @@
               langages <strong>HTML, CSS / SASS, Javascript, MySQL</strong>, le framework<strong> Vue </strong>et
               le<strong> SEO</strong>.
             </p>
-            <p class="police_prompt">Je suis capable de créer des <strong>serveurs</strong> avec Javascript et
+            <p data-aos="fade-down-left" class="police_prompt">Je suis capable de créer des <strong>serveurs</strong>
+              avec Javascript et
               d'utiliser
               des<strong> API</strong>.
               Implémenter une maquette ou template en<strong> site web</strong>.
@@ -53,36 +55,66 @@
         </div>
       </div>
       <section id="skills" class="skills">
-        <h3 class="police_lobster">Mes compétences en tant que Développeur Web</h3>
-        <div class="flex-container">
-          <div class="skills_box"><img src='../assets/html.jpg'></div>
-          <div class="skills_box"><img src='../assets/css.png'></div>
-          <div class="skills_box"><img src='../assets/JS.jpg'></div>
-          <div class="skills_box"><img src='../assets/mysql.jpg'></div>
-          <div class="skills_box"><img src='../assets/vue.jpg'></div>
-          <div class="skills_box"><img src='../assets/nodejs.jpg'></div>
-          <div class="skills_box"><img src='../assets/mongodb.jpg'></div>
+        <h3 data-aos="zoom-out-right" class="police_lobster">Mes compétences en tant que Développeur Web</h3>
+        <div data-aos="zoom-out-left" class="flex-container">
+          <div class="skills_box"><img src='../assets/html.jpg' alt="logo html"></div>
+          <div class="skills_box"><img src='../assets/css.png' alt="logo css"></div>
+          <div class="skills_box"><img src='../assets/JS.jpg' alt="logo js"></div>
+          <div class="skills_box"><img src='../assets/mysql.jpg' alt="logo MySql"></div>
+          <div class="skills_box"><img src='../assets/vue.jpg' alt="logo Vue"></div>
+          <div class="skills_box"><img src='../assets/nodejs.jpg' alt="logo nodeJs"></div>
+          <div class="skills_box"><img src='../assets/mongodb.jpg' alt="logo mongodb"></div>
         </div>
       </section>
       <section class="projets" id="projets">
-        <h3 style="display: none">Mes Projets (en cours de construction :)</h3>
+        <h3>Mes projets</h3>
+        <div class="projets_container">
+          <div class="projet_box">
+            <img src="../assets/p1.png" alt="projet de développement web de xavier picciotto réalizer un CV">
+            <div class="projet_text">
+              <h4>Transformer une maquette en site web</h4>
+              <p>Le projet consistait à intégrer une maquette de CV en site web responsif.</p>
+              <p>-Intégrer du contenu conformément à une maquette.</p>
+              <p>-Utiliser un système de gestion de versions pour le suivi du projet et son hébergement.</p>
+              <p>-Mettre en place son environnement Front-End.</p>
+              <p>-Implémenter une interface responsive.</p>
+            </div>
+          </div>
+          <div class="projet_box">
+            <img src="../assets/p2.png" alt="projet de développement web de xavier picciotto réalizer un CV">
+          </div>
+          <div class="projet_box">
+            <img src="../assets/p3.png" alt="projet de développement web de xavier picciotto réalizer un CV">
+          </div>
+          <div class="projet_box">
+            <img src="../assets/p4.png" alt="projet de développement web de xavier picciotto réalizer un CV">
+          </div>
+          <div class="projet_box">
+            <img src="../assets/p5.png" alt="projet de développement web de xavier picciotto réalizer un CV">
+          </div>
+          <div class="projet_box">
+            <img src="../assets/p6.png" alt="projet de développement web de xavier picciotto réalizer un CV">
+          </div>
+        </div>
       </section>
+
       <section class="personal">
-        <div id="cv" class="cv">
+
+        <div data-aos="zoom-out-down" id="cv" class="cv">
           <h3 class="police_lobster">Mon CV</h3>
           <div class="img-box">
-            <a href="../cv.pdf" target="blank">
+            <a href="../cv.pdf" download="Xavier_picciotto_CV.pdf" target="blank">
               <img src="../assets/CV.jpg" alt="Mon CV de développeur web format jpg">
             </a>
             <a href="../cv.pdf" download="Xavier_picciotto_CV.pdf"><button type="button"
                 class="police_prompt">Télécharger <i class="fas fa-download"></i></button></a>
-
           </div>
         </div>
-        <div id="contact" class="contact ">
+
+        <div data-aos="zoom-out-right" id="contact" class="contact ">
           <h3 class="police_lobster">Contactez moi</h3>
-          <form class="form_contact police_prompt" id="form_contact"
-            action="mailto:xav06@live.fr?subject=Contact portfolio" name="envoi" method=POST enctype="text/plain">
+          <form method="post" action="form.php" class="form_contact police_prompt" id="form_contact" name="envoi"
+            enctype="text/plain">
             <label for="firstName">Prénom* :</label>
             <input v-model="contact.firstName" type="text" name="firstName" placeholder="Prénom (requis)" id="firstName"
               required>
@@ -95,7 +127,7 @@
             <input v-model="contact.email" type="email" name="email" placeholder="exemple@domaine.com (requis)"
               id="email" required>
             <label for="message">Message* :</label>
-            <textarea v-model="contact.message" id="address" name="message" rows="4"
+            <textarea v-model="contact.message" id="message" name="message" rows="4"
               placeholder="Vous pouvez m'écrire ici (requis)." required></textarea>
             <button type="submit" class="form_button" id="submit">Envoyer</button>
           </form>
@@ -120,7 +152,8 @@
     },
     methods: {
 
-    }
+    },
+
   }
 </script>
 
@@ -180,6 +213,7 @@
       min-width: 250px;
       height: auto;
       margin-right: 5%;
+      border-radius: 4%;
       box-shadow: 0px 5px 50px 5px rgba(255, 255, 255, 0.267);
     }
 
@@ -220,7 +254,7 @@
   }
 
   .skills {
-    margin: auto 5%;
+    margin: 10% 10%;
 
     h3 {
       text-align: center;
@@ -254,6 +288,42 @@
     }
   }
 
+  .projets {
+    margin: 5% 10%;
+
+    h3 {
+      font-size: 3vw;
+    }
+
+    h4 {
+      font-size: 1vw;
+    }
+
+    .projets_cpntainer {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+    }
+
+    .projet_box {
+      width: 100%;
+      height: 25%;
+      display: flex;
+      align-items: center;
+      border: 3px solid black;
+
+      img {
+        width: 25%;
+        height: auto;
+      }
+    }
+    .projet_text{
+      font-size: 1.7em;
+    }
+  }
+
   .personal {
     font-size: 1.7em;
     text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.623);
@@ -266,7 +336,7 @@
       }
 
       .img-box {
-        width: 200px;
+        width: 40%;
         height: auto;
 
         i {
@@ -279,10 +349,10 @@
           border-radius: 10px;
           box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.493);
           cursor: pointer;
-          transition: 0.3s ease-in-out;
+          transition: 0.45s ease-in-out;
 
           &:hover {
-            transform: translate(10px, -5px);
+            transform: translate(50px, -5px);
             box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.493);
           }
         }
@@ -417,17 +487,20 @@
     }
 
     .presentation {
-    margin: 5% 2%;
+      margin: 5% 2%;
+
       .presentation_box {
         text-align: center;
       }
-      img{
+
+      img {
         float: none;
         margin: 0;
         width: 100%;
         max-width: 400px;
         border-radius: 10px;
       }
+
       h3 {
         font-size: 30px;
       }
@@ -454,6 +527,7 @@
 
       .skills_box {
         margin: 10px 15px;
+
         img {
           width: 65px;
           height: 65px;
@@ -466,18 +540,23 @@
       h3 {
         font-size: 30px;
       }
-      .cv{
+
+      .cv {
         margin: 5% 2%;
-        h3{
+
+        h3 {
           font-size: 30px;
         }
-        .img-box{
+
+        .img-box {
           margin: auto;
           text-align: center;
         }
       }
+
       .contact {
         margin: 5% 4%;
+
         form {
           margin: auto;
         }
