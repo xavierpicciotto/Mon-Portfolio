@@ -20,6 +20,7 @@ export default {
     padding: 0;
     background-image: -webkit-linear-gradient(0deg, #766dff 0%, #0296ff70 100%);
     overflow-x: hidden;
+    text-shadow: 2px 2px 2px black;
 
   }
 
