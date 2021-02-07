@@ -175,11 +175,11 @@
         <div data-aos="fade-right" id="cv" class="cv aos-init aos-animate">
           <h3 class="police_lobster">Mon CV:</h3>
           <div class="img-box">
-            <a href="../cv.pdf" download="Xavier_picciotto_CV.pdf" target="blank">
+            <a href="../Xavier_picciotto_CV.pdf" target="blank">
               <img src="../assets/CV.jpg" alt="Mon CV de développeur web format jpg">
             </a>
             <p>Maintenir la photo du CV appuyé puis cliquer sur "télécharger le fichier".</p>
-            <a href="../cv.pdf" download="Xavier_picciotto_CV.pdf"><button type="button"
+            <a href="../Xavier_picciotto_CV.pdf" download="Xavier_picciotto_CV.pdf"><button type="button"
                 class="police_prompt">Télécharger <i class="fas fa-download"></i></button></a>
           </div>
         </div>
@@ -230,7 +230,7 @@
 
     },
     methods: {
-      
+
     },
     computed:{
       
