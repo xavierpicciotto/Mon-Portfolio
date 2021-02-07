@@ -2,10 +2,10 @@
   <div class="home">
     <header>
       <nav class="link-container">
-        <a href="#skills">Skills</a>
-        <a href="#cv">CV</a>
-        <a href="#projets">Projets</a>
-        <a style="display:none;" href="#contact">Contact</a>
+        <a class="police_lobster" href="#skills">Skills</a>
+        <a class="police_lobster" href="#cv">CV</a>
+        <a class="police_lobster" href="#projets">Projets</a>
+        <a class="police_lobster" style="display:none;" href="#contact">Contact</a>
         <a href="https://github.com/xavierpicciotto?tab=repositories" target="blank">
           <i class="fab fa-github"></i>
         </a>
@@ -25,11 +25,13 @@
     </div>
     <main>
       <div class="presentation">
-        <h3 data-aos="fade-right" class="police_lobster">Mon profil:</h3>
+        <h3 data-aos="fade-right" class="police_lobster aos-init aos-animate">Mon profil:</h3>
         <div class="presentation_box">
-          <img data-aos="zoom-in-up" alt="Une photo de xavier picciotto" src="../assets/Me.jpg">
+          <img data-aos="fade-right" class="aos-init aos-animate" alt="Une photo de xavier picciotto"
+            src="../assets/Me.jpg">
           <div class="presentaion_text">
-            <p data-aos="fade-up-left" class="police_prompt">Je suis récemment diplômé chez OpenClassrooms d'un titre
+            <p data-aos="fade-up-rigth" class="police_prompt aos-init aos-animate">Je suis récemment diplômé chez
+              OpenClassrooms d'un titre
               RNCP (Bac +2) de
               développeur
               Web Junior. Cette
@@ -38,7 +40,8 @@
               langages <strong>HTML, CSS / SASS, Javascript, MySQL</strong>, le framework<strong> Vue </strong>et
               le<strong> SEO</strong>.
             </p>
-            <p data-aos="fade-down-left" class="police_prompt">Je suis capable de créer des <strong>serveurs</strong>
+            <p data-aos="fade-down-right" class="police_prompt aos-init aos-animate">Je suis capable de créer des
+              <strong>serveurs</strong>
               avec Javascript et
               d'utiliser
               des<strong> API</strong>.
@@ -55,8 +58,9 @@
         </div>
       </div>
       <section id="skills" class="skills">
-        <h3 data-aos="zoom-out-right" class="police_lobster">Mes compétences en tant que Développeur Web</h3>
-        <div data-aos="zoom-out-left" class="flex-container">
+        <h3 data-aos="zoom-in-right" class="police_lobster aos-init aos-animate">Mes compétences en tant que Développeur
+          Web</h3>
+        <div data-aos="zoom-out-right" class="flex-container aos-init aos-animate">
           <div class="skills_box"><img src='../assets/html.jpg' alt="logo html"></div>
           <div class="skills_box"><img src='../assets/css.png' alt="logo css"></div>
           <div class="skills_box"><img src='../assets/JS.jpg' alt="logo js"></div>
@@ -68,121 +72,119 @@
       </section>
       <section class="projets" id="projets">
         <h3 class="police_lobster">Mes projets:</h3>
-        <div class="projets_container">
-          <div data-aos="zoom-out-right" class="projet_box">
-            <h4>Transformer une maquette en site web</h4>
-            <div v-on:click="p1 = !p1" class="projet_dropdown">
-              <img src="../assets/p1.png" alt="projet de développement web de xavier picciotto réalizer un CV">
-              <div v-if="p1" class="projet_text">
-                <p>-Intégrer du contenu conformément à une maquette.</p>
-                <p>-Utiliser un système de gestion de versions pour le suivi du projet et son hébergement.</p>
-                <p>-Mettre en place son environnement Front-End.</p>
-                <p>-Implémenter une interface responsive.</p>
-                <div class="lien_git"><a href="https://github.com/xavierpicciotto/xavierpicciotto" target="blank">Voir
-                    le code du projet</a></div>
-              </div>
-            </div>
-
-          </div>
-          <div data-aos="zoom-out-left" class="projet_box">
-            <h4>Dynamiser une page web avec des animations CSS</h4>
-            <div v-on:click="p2 = !p2" class="projet_dropdown">
-              <img src="../assets/p2.png"
-                alt="projet de développement web de xavier picciotto réalizer un menu avec des animation css / sass">
-              <div v-if="p2" class="projet_text">
-                <p>-Créer une maquette qui répertorie les menus de restaurants gastronomiques en
-                  site web responsif.</p>
-                <p>-Mettre en place une structure de navigation pour un site web.</p>
-                <p>-Mettre en œuvre des effets CSS graphiques avancés.</p>
-                <p>-Assurer la cohérence graphique d'un site web.</p>
-                <div class="lien_git"><a href="https://github.com/xavierpicciotto/omyfood" target="blank">Voir le code
-                    du projet</a></div>
-              </div>
-            </div>
-          </div>
-
-          <div data-aos="zoom-out-right" class="projet_box">
-            <h4>Optimiser un site web existant</h4>
-            <div v-on:click="p3 = !p3" class="projet_dropdown">
-              <img src="../assets/p3.png" alt="projet de développement web de xavier picciotto SEO et optimisation">
-              <div v-if="p3" class="projet_text">
-                <p>-Réaliser une recherche des bonnes pratiques en développement web.</p>
-                <p>-Assurer l'accessibilité d'un site web.</p>
-                <p>-Écrire un code HTML et CSS maintenable.</p>
-                <p>-Optimiser la taille et la vitesse d’un site web.</p>
-                <p>-Optimiser le référencement d'un site web.</p>
-                <div class="lien_git"><a href="https://github.com/xavierpicciotto/La-chouette-testing"
-                    target="blank">Voir le code du projet</a></div>
-              </div>
-            </div>
-
-          </div>
-
-          <div data-aos="zoom-out-left" class="projet_box">
-            <h4>Construire un site de e-commerce</h4>
-            <div v-on:click="p4 = !p4" class="projet_dropdown">
-              <img src="../assets/p4.png"
-                alt="projet de développement web de xavier picciotto réalizer site e-commerce">
-              <div v-if="p4" class="projet_text">
-                <p>-Créer un plan de test pour une application.</p>
-                <p>-Gérer des événements JavaScript.</p>
-                <p>-Interagir avec un web service avec JavaScript.</p>
-                <p>-Valider des données issues de sources externes.</p>
-                <div class="lien_git"><a href="https://github.com/xavierpicciotto/Orinoco" target="blank">Voir le code
-                    du projet</a></div>
-              </div>
-            </div>
-
-          </div>
-
-          <div data-aos="zoom-out-right" class="projet_box">
-            <h4>Construire une API sécurisée pour une application d'avis gastronomiques</h4>
-            <div v-on:click="p5 = !p5" class="projet_dropdown">
-              <img src="../assets/p5.png"
-                alt="projet de développement web de xavier picciotto Construire un API sécurisée">
-              <div v-if="p5" class="projet_text">
-                <p>-Mettre en œuvre des opérations CRUD (create, read, update, delete) de manière sécurisée.</p>
-                <p>-Stocker des données de manière sécurisée.</p>
-                <p>-Implémenter un modèle logique de données conformément à la réglementation.</p>
-                <div class="lien_git"><a href="https://github.com/xavierpicciotto/Projet-6" target="blank">Voir le code
-                    du projet</a></div>
-              </div>
-            </div>
-          </div>
-
-          <div data-aos="zoom-out-left" class="projet_box">
-            <h4>Créer un réseau social d’entreprise.</h4>
-            <div v-on:click="p6 = !p6" class="projet_dropdown">
-              <img src="../assets/p6.png"
-                alt="projet de développement web de xavier picciotto réalizer un réseau social d’entreprise">
-              <div v-if="p6" class="projet_text">
-                <p>-Personnaliser le contenu envoyé à un client web.</p>
-                <p>-Gérer un stockage de données à l'aide de SQL.</p>
-                <p>-Implémenter un stockage de données sécurisé en utilisant SQL.</p>
-                <p>-Authentifier un utilisateur et maintenir sa session.</p>
-                <div class="lien_git"><a href="https://github.com/xavierpicciotto/Projet-7" target="blank">Voir le code
-                    du projet</a></div>
-              </div>
+        <div data-aos="fade-right" class="projet_box aos-init aos-animate">
+          <h4>Transformer une maquette en site web</h4>
+          <div v-on:click="p1 = !p1" class="projet_dropdown">
+            <img src="../assets/p1.png" alt="projet de développement web de xavier picciotto réalizer un CV">
+            <div v-if="p1" class="projet_text">
+              <p>-Intégrer du contenu conformément à une maquette.</p>
+              <p>-Utiliser un système de gestion de versions pour le suivi du projet et son hébergement.</p>
+              <p>-Mettre en place son environnement Front-End.</p>
+              <p>-Implémenter une interface responsive.</p>
+              <div class="lien_git"><a href="https://github.com/xavierpicciotto/xavierpicciotto" target="blank">Voir
+                  le code du projet</a></div>
             </div>
           </div>
 
         </div>
+        <div data-aos="fade-right" class="projet_box aos-init aos-animate">
+          <h4>Dynamiser une page web avec des animations CSS</h4>
+          <div v-on:click="p2 = !p2" class="projet_dropdown">
+            <img src="../assets/p2.png"
+              alt="projet de développement web de xavier picciotto réalizer un menu avec des animation css / sass">
+            <div v-if="p2" class="projet_text">
+              <p>-Créer une maquette qui répertorie les menus de restaurants gastronomiques en
+                site web responsif.</p>
+              <p>-Mettre en place une structure de navigation pour un site web.</p>
+              <p>-Mettre en œuvre des effets CSS graphiques avancés.</p>
+              <p>-Assurer la cohérence graphique d'un site web.</p>
+              <div class="lien_git"><a href="https://github.com/xavierpicciotto/omyfood" target="blank">Voir le code
+                  du projet</a></div>
+            </div>
+          </div>
+        </div>
+
+        <div data-aos="fade-right" class="projet_box aos-init aos-animate">
+          <h4>Optimiser un site web existant</h4>
+          <div v-on:click="p3 = !p3" class="projet_dropdown">
+            <img src="../assets/p3.png" alt="projet de développement web de xavier picciotto SEO et optimisation">
+            <div v-if="p3" class="projet_text">
+              <p>-Réaliser une recherche des bonnes pratiques en développement web.</p>
+              <p>-Assurer l'accessibilité d'un site web.</p>
+              <p>-Écrire un code HTML et CSS maintenable.</p>
+              <p>-Optimiser la taille et la vitesse d’un site web.</p>
+              <p>-Optimiser le référencement d'un site web.</p>
+              <div class="lien_git"><a href="https://github.com/xavierpicciotto/La-chouette-testing" target="blank">Voir
+                  le code du projet</a></div>
+            </div>
+          </div>
+
+        </div>
+
+        <div data-aos="fade-right" class="projet_box aos-init aos-animate">
+          <h4>Construire un site de e-commerce</h4>
+          <div v-on:click="p4 = !p4" class="projet_dropdown">
+            <img src="../assets/p4.png" alt="projet de développement web de xavier picciotto réalizer site e-commerce">
+            <div v-if="p4" class="projet_text">
+              <p>-Créer un plan de test pour une application.</p>
+              <p>-Gérer des événements JavaScript.</p>
+              <p>-Interagir avec un web service avec JavaScript.</p>
+              <p>-Valider des données issues de sources externes.</p>
+              <div class="lien_git"><a href="https://github.com/xavierpicciotto/Orinoco" target="blank">Voir le code
+                  du projet</a></div>
+            </div>
+          </div>
+
+        </div>
+
+        <div data-aos="fade-right" class="projet_box aos-init aos-animate">
+          <h4>Construire une API sécurisée pour une application d'avis gastronomiques</h4>
+          <div v-on:click="p5 = !p5" class="projet_dropdown">
+            <img src="../assets/p5.png"
+              alt="projet de développement web de xavier picciotto Construire un API sécurisée">
+            <div v-if="p5" class="projet_text">
+              <p>-Mettre en œuvre des opérations CRUD (create, read, update, delete) de manière sécurisée.</p>
+              <p>-Stocker des données de manière sécurisée.</p>
+              <p>-Implémenter un modèle logique de données conformément à la réglementation.</p>
+              <div class="lien_git"><a href="https://github.com/xavierpicciotto/Projet-6" target="blank">Voir le code
+                  du projet</a></div>
+            </div>
+          </div>
+        </div>
+
+        <div data-aos="fade-right" class="projet_box aos-init aos-animate">
+          <h4>Créer un réseau social d’entreprise.</h4>
+          <div v-on:click="p6 = !p6" class="projet_dropdown">
+            <img src="../assets/p6.png"
+              alt="projet de développement web de xavier picciotto réalizer un réseau social d’entreprise">
+            <div v-if="p6" class="projet_text">
+              <p>-Personnaliser le contenu envoyé à un client web.</p>
+              <p>-Gérer un stockage de données à l'aide de SQL.</p>
+              <p>-Implémenter un stockage de données sécurisé en utilisant SQL.</p>
+              <p>-Authentifier un utilisateur et maintenir sa session.</p>
+              <div class="lien_git"><a href="https://github.com/xavierpicciotto/Projet-7" target="blank">Voir le code
+                  du projet</a></div>
+            </div>
+          </div>
+        </div>
+
       </section>
 
       <section class="personal">
 
-        <div data-aos="zoom-out-down" id="cv" class="cv">
+        <div data-aos="fade-right" id="cv" class="cv aos-init aos-animate">
           <h3 class="police_lobster">Mon CV:</h3>
           <div class="img-box">
             <a href="../cv.pdf" download="Xavier_picciotto_CV.pdf" target="blank">
               <img src="../assets/CV.jpg" alt="Mon CV de développeur web format jpg">
             </a>
+            <p>Maintenir la photo du CV appuyé puis cliquer sur "télécharger le fichier".</p>
             <a href="../cv.pdf" download="Xavier_picciotto_CV.pdf"><button type="button"
                 class="police_prompt">Télécharger <i class="fas fa-download"></i></button></a>
           </div>
         </div>
 
-        <div data-aos="zoom-out-right" id="contact" class="contact ">
+        <div data-aos="fade-right" id="contact" class="contact aos-init aos-animate">
           <h3 class="police_lobster">Contactez moi:</h3>
           <form method="post" action="form.php" class="form_contact police_prompt" id="form_contact" name="envoi"
             enctype="text/plain">
@@ -206,11 +208,10 @@
       </section>
     </main>
   </div>
+  
 </template>
-
 <script>
   import Contact from '../models/contact';
-
   export default {
     name: 'Home',
     data() {
@@ -222,14 +223,18 @@
         p4: false,
         p5: false,
         p6: false,
+        textFocusOn: "",
       }
     },
     components: {
 
     },
     methods: {
-
+      
     },
+    computed:{
+      
+    }
   }
 </script>
 
@@ -255,7 +260,9 @@
     }
 
     .link-container {
-      width: auto;
+      position: fixed;
+      width: 100%;
+      z-index: 2;
       display: flex;
       justify-content: space-evenly;
       align-items: center;
@@ -367,13 +374,6 @@
   .projets {
     margin: 5% 10%;
 
-    .projets_container {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-
     h3 {
       font-size: 3vw;
     }
@@ -385,23 +385,23 @@
     }
 
     .projet_dropdown {
-    cursor: pointer;
-    width: 80%;
-    max-width: 650px;
-    height: auto;
-    margin: 2% auto;
-    display: flex;
-    background-color: #00000099;
-    border-radius: 25px;
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
+      cursor: pointer;
+      width: 80%;
+      max-width: 750px;
+      height: auto;
+      margin: 3% auto;
+      background-color: #00000099;
+      border-radius: 25px;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
 
       &:hover {
         img {
           transform: translate(0px, -15px);
-          box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.63);
+          box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.411);
         }
       }
     }
@@ -409,15 +409,14 @@
     .projet_box {
       width: 100%;
       height: 25%;
-      //border: 3px solid black;
+      margin: 10% auto;
 
       img {
-        max-width: 650px;
         width: 100%;
         height: auto;
         margin: auto;
         border-radius: 25px;
-        box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.719);
+        box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.459);
         transition: 0.4s ease-in-out;
       }
     }
@@ -471,6 +470,10 @@
     .cv {
       margin: 5% 10%;
 
+      p {
+        display: none;
+      }
+
       h3 {
         font-size: 3vw;
       }
@@ -492,7 +495,7 @@
           transition: 0.45s ease-in-out;
 
           &:hover {
-            transform: translate(5px, -5px);
+            transform: translate(0px, -15px);
             box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.493);
           }
         }
@@ -608,7 +611,7 @@
 
       .name {
         font-size: 3.50vh;
-        margin-top: 5%;
+        margin-top: 10%;
 
         h1 {
           margin: 0;
@@ -705,12 +708,18 @@
     }
 
     .personal {
+
       h3 {
         font-size: 30px;
       }
 
       .cv {
         margin: 5% 2%;
+
+        p {
+          display: block;
+          font-size: 15px;
+        }
 
         h3 {
           font-size: 30px;
@@ -723,9 +732,11 @@
           text-align: center;
 
         }
-        img:hover{
-          transform: translate(0px,0px);
-          }
+
+        img:hover {
+          transform: translate(0px, 0px);
+        }
+
         a {
           button {
             font-size: 18px;
