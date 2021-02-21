@@ -81,7 +81,7 @@
               <p>-Utiliser un système de gestion de versions pour le suivi du projet et son hébergement.</p>
               <p>-Mettre en place son environnement Front-End.</p>
               <p>-Implémenter une interface responsive.</p>
-              <div class="lien_git"><a href="https://github.com/xavierpicciotto/xavierpicciotto" target="blank">Voir
+              <div class="lien_git"><a href="https://github1s.com/xavierpicciotto/xavierpicciotto" target="blank">Voir
                   le code du projet</a></div>
             </div>
           </div>
@@ -98,7 +98,7 @@
               <p>-Mettre en place une structure de navigation pour un site web.</p>
               <p>-Mettre en œuvre des effets CSS graphiques avancés.</p>
               <p>-Assurer la cohérence graphique d'un site web.</p>
-              <div class="lien_git"><a href="https://github.com/xavierpicciotto/omyfood" target="blank">Voir le code
+              <div class="lien_git"><a href="https://github1s.com/xavierpicciotto/omyfood" target="blank">Voir le code
                   du projet</a></div>
             </div>
           </div>
@@ -114,7 +114,7 @@
               <p>-Écrire un code HTML et CSS maintenable.</p>
               <p>-Optimiser la taille et la vitesse d’un site web.</p>
               <p>-Optimiser le référencement d'un site web.</p>
-              <div class="lien_git"><a href="https://github.com/xavierpicciotto/La-chouette-testing" target="blank">Voir
+              <div class="lien_git"><a href="https://github1s.com/xavierpicciotto/La-chouette-testing" target="blank">Voir
                   le code du projet</a></div>
             </div>
           </div>
@@ -130,7 +130,7 @@
               <p>-Gérer des événements JavaScript.</p>
               <p>-Interagir avec un web service avec JavaScript.</p>
               <p>-Valider des données issues de sources externes.</p>
-              <div class="lien_git"><a href="https://github.com/xavierpicciotto/Orinoco" target="blank">Voir le code
+              <div class="lien_git"><a href="https://github1s.com/xavierpicciotto/Orinoco" target="blank">Voir le code
                   du projet</a></div>
             </div>
           </div>
@@ -146,7 +146,7 @@
               <p>-Mettre en œuvre des opérations CRUD (create, read, update, delete) de manière sécurisée.</p>
               <p>-Stocker des données de manière sécurisée.</p>
               <p>-Implémenter un modèle logique de données conformément à la réglementation.</p>
-              <div class="lien_git"><a href="https://github.com/xavierpicciotto/Projet-6" target="blank">Voir le code
+              <div class="lien_git"><a href="https://github1s.com/xavierpicciotto/Projet-6" target="blank">Voir le code
                   du projet</a></div>
             </div>
           </div>
@@ -162,7 +162,7 @@
               <p>-Gérer un stockage de données à l'aide de SQL.</p>
               <p>-Implémenter un stockage de données sécurisé en utilisant SQL.</p>
               <p>-Authentifier un utilisateur et maintenir sa session.</p>
-              <div class="lien_git"><a href="https://github.com/xavierpicciotto/Projet-7" target="blank">Voir le code
+              <div class="lien_git"><a href="https://github1s.com/xavierpicciotto/Projet-7" target="blank">Voir le code
                   du projet</a></div>
             </div>
           </div>
