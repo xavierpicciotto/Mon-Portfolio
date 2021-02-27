@@ -1,7 +1,6 @@
 export default class Contact {
-    constructor(firstName, lastName, email,entreprise , message ) {
-      this.firstName = firstName;
-      this.lastName = lastName;
+    constructor(name, email, entreprise , message ) {
+      this.name = name;
       this.entreprise = entreprise;
       this.email = email;
       this.message = message;
