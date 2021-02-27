@@ -3,9 +3,9 @@
     <header>
       <nav class="link-container">
         <a class="police_lobster" href="#skills">Skills</a>
-        <a class="police_lobster" href="#cv">CV</a>
         <a class="police_lobster" href="#projets">Projets</a>
-        <a class="police_lobster" style="display:none;" href="#contact">Contact</a>
+        <a class="police_lobster" href="#cv">CV</a>
+        <a class="police_lobster" href="#contact">Contact</a>
         <a href="https://github.com/xavierpicciotto?tab=repositories" target="blank">
           <i class="fab fa-github"></i>
         </a>
@@ -71,28 +71,75 @@
         </div>
       </section>
       <section class="projets" id="projets">
-        <h3 class="police_lobster">Mes projets:</h3>
+        <h3 class="police_lobster">Mes projets :</h3>
         <div data-aos="fade-right" class="projet_box aos-init aos-animate">
-          <h4>Transformer une maquette en site web</h4>
-          <div v-on:click="p1 = !p1" class="projet_dropdown">
-            <img src="../assets/p1.png" alt="projet de développement web de xavier picciotto réalizer un CV">
-            <div v-if="p1" class="projet_text">
-              <p>-Intégrer du contenu conformément à une maquette.</p>
-              <p>-Utiliser un système de gestion de versions pour le suivi du projet et son hébergement.</p>
-              <p>-Mettre en place son environnement Front-End.</p>
-              <p>-Implémenter une interface responsive.</p>
-              <div class="lien_git"><a href="https://github1s.com/xavierpicciotto/xavierpicciotto" target="blank">Voir
+          <h4>Créer un réseau social d’entreprise.</h4>
+          <div v-on:click="enableText(6)" class="projet_dropdown">
+            <img src="../assets/p6.png"
+              alt="projet de développement web de xavier picciotto réaliser un réseau social d’entreprise">
+            <div v-if="textFocusOn == 6" class="projet_text">
+              <p>-Personnaliser le contenu envoyé à un client web.</p>
+              <p>-Gérer un stockage de données à l'aide de SQL.</p>
+              <p>-Implémenter un stockage de données sécurisé en utilisant SQL.</p>
+              <p>-Authentifier un utilisateur et maintenir sa session.</p>
+              <div class="lien_git"><a href="https://github1s.com/xavierpicciotto/Projet-7" target="blank">Voir le code
+                  du projet</a></div>
+            </div>
+          </div>
+        </div>
+        <div data-aos="fade-right" class="projet_box aos-init aos-animate">
+          <h4>Construire une API sécurisée pour une application d'avis gastronomiques</h4>
+          <div v-on:click="enableText(5)" class="projet_dropdown">
+            <img src="../assets/p5.png"
+              alt="projet de développement web de xavier picciotto Construire un API sécurisée">
+            <div v-if="textFocusOn == 5" class="projet_text">
+              <p>-Mettre en œuvre des opérations CRUD (create, read, update, delete) de manière sécurisée.</p>
+              <p>-Stocker des données de manière sécurisée.</p>
+              <p>-Implémenter un modèle logique de données conformément à la réglementation.</p>
+              <div class="lien_git"><a href="https://github1s.com/xavierpicciotto/Projet-6" target="blank">Voir le code
+                  du projet</a></div>
+            </div>
+          </div>
+        </div>
+
+        <div data-aos="fade-right" class="projet_box aos-init aos-animate">
+          <h4>Construire un site de e-commerce</h4>
+          <div v-on:click="enableText(4)" class="projet_dropdown">
+            <img src="../assets/p4.png" alt="projet de développement web de xavier picciotto réalizer site e-commerce">
+            <div v-if="textFocusOn == 4" class="projet_text">
+              <p>-Créer un plan de test pour une application.</p>
+              <p>-Gérer des événements JavaScript.</p>
+              <p>-Interagir avec un web service avec JavaScript.</p>
+              <p>-Valider des données issues de sources externes.</p>
+              <div class="lien_git"><a href="https://github1s.com/xavierpicciotto/Orinoco" target="blank">Voir le code
+                  du projet</a></div>
+            </div>
+          </div>
+        </div>
+
+        <div data-aos="fade-right" class="projet_box aos-init aos-animate">
+          <h4>Optimiser un site web existant</h4>
+          <div v-on:click="enableText(3)" class="projet_dropdown">
+            <img src="../assets/p3.png" alt="projet de développement web de xavier picciotto SEO et optimisation">
+            <div v-if="textFocusOn == 3" class="projet_text">
+              <p>-Réaliser une recherche des bonnes pratiques en développement web.</p>
+              <p>-Assurer l'accessibilité d'un site web.</p>
+              <p>-Écrire un code HTML et CSS maintenable.</p>
+              <p>-Optimiser la taille et la vitesse d’un site web.</p>
+              <p>-Optimiser le référencement d'un site web.</p>
+              <div class="lien_git"><a href="https://github1s.com/xavierpicciotto/La-chouette-testing"
+                  target="blank">Voir
                   le code du projet</a></div>
             </div>
           </div>
-
         </div>
+
         <div data-aos="fade-right" class="projet_box aos-init aos-animate">
           <h4>Dynamiser une page web avec des animations CSS</h4>
-          <div v-on:click="p2 = !p2" class="projet_dropdown">
+          <div v-on:click="enableText(2)" class="projet_dropdown">
             <img src="../assets/p2.png"
               alt="projet de développement web de xavier picciotto réalizer un menu avec des animation css / sass">
-            <div v-if="p2" class="projet_text">
+            <div v-if="textFocusOn == 2" class="projet_text">
               <p>-Créer une maquette qui répertorie les menus de restaurants gastronomiques en
                 site web responsif.</p>
               <p>-Mettre en place une structure de navigation pour un site web.</p>
@@ -105,101 +152,49 @@
         </div>
 
         <div data-aos="fade-right" class="projet_box aos-init aos-animate">
-          <h4>Optimiser un site web existant</h4>
-          <div v-on:click="p3 = !p3" class="projet_dropdown">
-            <img src="../assets/p3.png" alt="projet de développement web de xavier picciotto SEO et optimisation">
-            <div v-if="p3" class="projet_text">
-              <p>-Réaliser une recherche des bonnes pratiques en développement web.</p>
-              <p>-Assurer l'accessibilité d'un site web.</p>
-              <p>-Écrire un code HTML et CSS maintenable.</p>
-              <p>-Optimiser la taille et la vitesse d’un site web.</p>
-              <p>-Optimiser le référencement d'un site web.</p>
-              <div class="lien_git"><a href="https://github1s.com/xavierpicciotto/La-chouette-testing" target="blank">Voir
+          <h4>Transformer une maquette en site web</h4>
+          <div v-on:click="enableText(1)" class="projet_dropdown">
+            <img src="../assets/p1.png" alt="projet de développement web de xavier picciotto réalizer un CV">
+            <div v-if="textFocusOn == 1" class="projet_text">
+              <p>-Intégrer du contenu conformément à une maquette.</p>
+              <p>-Utiliser un système de gestion de versions pour le suivi du projet et son hébergement.</p>
+              <p>-Mettre en place son environnement Front-End.</p>
+              <p>-Implémenter une interface responsive.</p>
+              <div class="lien_git"><a href="https://github1s.com/xavierpicciotto/xavierpicciotto" target="blank">Voir
                   le code du projet</a></div>
             </div>
           </div>
-
         </div>
 
-        <div data-aos="fade-right" class="projet_box aos-init aos-animate">
-          <h4>Construire un site de e-commerce</h4>
-          <div v-on:click="p4 = !p4" class="projet_dropdown">
-            <img src="../assets/p4.png" alt="projet de développement web de xavier picciotto réalizer site e-commerce">
-            <div v-if="p4" class="projet_text">
-              <p>-Créer un plan de test pour une application.</p>
-              <p>-Gérer des événements JavaScript.</p>
-              <p>-Interagir avec un web service avec JavaScript.</p>
-              <p>-Valider des données issues de sources externes.</p>
-              <div class="lien_git"><a href="https://github1s.com/xavierpicciotto/Orinoco" target="blank">Voir le code
-                  du projet</a></div>
-            </div>
-          </div>
-
-        </div>
-
-        <div data-aos="fade-right" class="projet_box aos-init aos-animate">
-          <h4>Construire une API sécurisée pour une application d'avis gastronomiques</h4>
-          <div v-on:click="p5 = !p5" class="projet_dropdown">
-            <img src="../assets/p5.png"
-              alt="projet de développement web de xavier picciotto Construire un API sécurisée">
-            <div v-if="p5" class="projet_text">
-              <p>-Mettre en œuvre des opérations CRUD (create, read, update, delete) de manière sécurisée.</p>
-              <p>-Stocker des données de manière sécurisée.</p>
-              <p>-Implémenter un modèle logique de données conformément à la réglementation.</p>
-              <div class="lien_git"><a href="https://github1s.com/xavierpicciotto/Projet-6" target="blank">Voir le code
-                  du projet</a></div>
-            </div>
-          </div>
-        </div>
-
-        <div data-aos="fade-right" class="projet_box aos-init aos-animate">
-          <h4>Créer un réseau social d’entreprise.</h4>
-          <div v-on:click="p6 = !p6" class="projet_dropdown">
-            <img src="../assets/p6.png"
-              alt="projet de développement web de xavier picciotto réalizer un réseau social d’entreprise">
-            <div v-if="p6" class="projet_text">
-              <p>-Personnaliser le contenu envoyé à un client web.</p>
-              <p>-Gérer un stockage de données à l'aide de SQL.</p>
-              <p>-Implémenter un stockage de données sécurisé en utilisant SQL.</p>
-              <p>-Authentifier un utilisateur et maintenir sa session.</p>
-              <div class="lien_git"><a href="https://github1s.com/xavierpicciotto/Projet-7" target="blank">Voir le code
-                  du projet</a></div>
-            </div>
-          </div>
-        </div>
 
       </section>
 
       <section class="personal">
 
         <div data-aos="fade-right" id="cv" class="cv aos-init aos-animate">
-          <h3 class="police_lobster">Mon CV:</h3>
+          <h3 class="police_lobster">Mon CV :</h3>
           <div class="img-box">
             <a href="../Xavier_picciotto_CV.pdf" target="blank">
               <img src="../assets/CV.jpg" alt="Mon CV de développeur web format jpg">
             </a>
-            <p>Maintenir la photo du CV appuyé puis cliquer sur "télécharger le fichier".</p>
+            <p>Maintenir la photo du CV appuyé puis cliquer sur "télécharger le fichier".<br>(mobiles)</p>
             <a href="../Xavier_picciotto_CV.pdf" download="Xavier_picciotto_CV.pdf"><button type="button"
                 class="police_prompt">Télécharger <i class="fas fa-download"></i></button></a>
           </div>
         </div>
 
         <div data-aos="fade-right" id="contact" class="contact aos-init aos-animate">
-          <h3 class="police_lobster">Contactez moi:</h3>
-          <form method="post" action="form.php" class="form_contact police_prompt" id="form_contact" name="envoi"
-            enctype="text/plain">
-            <label for="firstName">Prénom* :</label>
-            <input v-model="contact.firstName" type="text" name="firstName" placeholder="Prénom (requis)" id="firstName"
-              required>
-            <label for="lastName">Nom :</label>
-            <input v-model="contact.lastName" type="text" name="lastName" placeholder="Nom (facultatif)" id="lastName">
+          <h3 class="police_lobster">Contactez moi :</h3>
+          <form @submit.prevent="sendEmail" class="form_contact police_prompt" id="form_contact" name="form">
+            <label for="name">Nom et prénom :</label>
+            <input v-model="contact.name" type="text" name="name" placeholder="Nom Prénom (facultatif)" id="name">
             <label for="entreprise">Entreprise :</label>
             <input v-model="contact.entreprise" type="text" name="entreprise" id="entreprise"
               placeholder="Entreprise (facultatif)">
-            <label for="email">E-mail* :</label>
+            <label for="email">E-mail :</label>
             <input v-model="contact.email" type="email" name="email" placeholder="exemple@domaine.com (requis)"
               id="email" required>
-            <label for="message">Message* :</label>
+            <label for="message">Message :</label>
             <textarea v-model="contact.message" id="message" name="message" rows="4"
               placeholder="Vous pouvez m'écrire ici (requis)." required></textarea>
             <button type="submit" class="form_button" id="submit">Envoyer</button>
@@ -208,32 +203,36 @@
       </section>
     </main>
   </div>
-  
+
 </template>
 <script>
   import Contact from '../models/contact';
+  import service from '../service/contact.service';
+
   export default {
     name: 'Home',
     data() {
       return {
-        contact: new Contact('', '', '', '', ''),
-        p1: false,
-        p2: false,
-        p3: false,
-        p4: false,
-        p5: false,
-        p6: false,
-        textFocusOn: "",
+        contact: new Contact('', '', '', ''),
+        textFocusOn: 0,
       }
     },
     components: {
 
     },
     methods: {
-
+      enableText: function (n) {
+        return this.textFocusOn == n ? this.textFocusOn = 0 : this.textFocusOn = n
+      },
+      sendEmail: function() {
+        return service.sendMail(this.contact).then(() =>{
+          document.getElementById('submit').textContent = 'SUCCESS!!'
+          document.getElementById('submit').setAttribute('disabled','true')
+        }).catch()
+      },
     },
-    computed:{
-      
+    computed: {
+
     }
   }
 </script>
@@ -425,7 +424,6 @@
       font-size: 1.6em;
       width: 100%;
       height: auto;
-      max-width: 650px;
     }
 
     .lien_git {
@@ -479,7 +477,7 @@
       }
 
       .img-box {
-        width: 40%;
+        width: 25%;
         height: auto;
 
         i {
@@ -532,7 +530,6 @@
 
   .contact {
     margin: 5% 10%;
-    display: none;
 
     h3 {
       font-size: 3vw;
@@ -803,7 +800,7 @@
     }
 
     to {
-      transform: scale(1.10);
+      transform: scale(1.07);
       box-shadow: 2px 10px 3px rgba(0, 0, 0, 0.424);
     }
   }
