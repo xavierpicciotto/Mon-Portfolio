@@ -187,7 +187,7 @@
         <div data-aos="fade-right" id="contact" class="contact aos-init aos-animate">
           <h3 class="police_lobster">Contactez moi :</h3>
           <div v-if="sendReport" id="report" class="message police_prompt">
-            <p>Votre message a bien était envoyé.&#128522;</p>
+            <p>Votre message a bien été envoyé.&#128522;</p>
           </div>
           <form @submit.prevent="sendEmail" class="form_contact police_prompt" id="form_contact" name="form">
             <label for="name">Nom et prénom :</label>
