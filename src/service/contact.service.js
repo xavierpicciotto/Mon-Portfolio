@@ -6,7 +6,7 @@ class contact {
     sendMail(data) {
         return axios.post(API_URL, {
                 sender:{  
-                   name:`${data.name}`,
+                   name:`${data.name || 'Sans nom'}`,
                    email:`${data.email}`
                 },
                 to:[  
@@ -16,7 +16,7 @@ class contact {
                    }
                 ],
                 subject:"Contact portfolio",
-                htmlContent:`<html><head></head><body><p>Hello,</p>${data.message} <br> ${data.entreprise}</p></body></html>`
+                htmlContent:`<html><head></head><body><p>Hello,</p>${data.message} <br> ${data.entreprise || 'entreprise non renseignée'}</p></body></html>`
         }, {
             headers: {
                 'api-key': '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',
