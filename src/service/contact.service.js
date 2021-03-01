@@ -23,7 +23,14 @@ class contact {
                 'accept': 'application/json',
                 'content-type': 'application/json'
             }
-        }).then(() => console.log('send successfull')).catch(() => console.log('error email'))
+        }).then(() => {
+            document.getElementById('submit').textContent = 'SUCCESS!!'
+            document.getElementById('submit').setAttribute('disabled', 'true')
+        } ).catch(() =>{
+            document.getElementById('report').style.backgroundColor = "red"
+            document.getElementById('report').textContent= 'Oups une erreur est survenue'
+            document.getElementById('submit').textContent = 'renvoyer'
+        })
     }
 }
 
