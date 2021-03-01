@@ -215,6 +215,7 @@
       return {
         contact: new Contact('', '', '', ''),
         textFocusOn: 0,
+        alreadySend: false,
       }
     },
     components: {
@@ -224,11 +225,23 @@
       enableText: function (n) {
         return this.textFocusOn == n ? this.textFocusOn = 0 : this.textFocusOn = n
       },
-      sendEmail: function() {
-        return service.sendMail(this.contact).then(() =>{
-          document.getElementById('submit').textContent = 'SUCCESS!!'
-          document.getElementById('submit').setAttribute('disabled','true')
-        }).catch()
+      sendEmail: function () {
+        if (this.alreadySend) {
+          if (!confirm('Vous avez déjà envoyé un message, voulez-vous en renvoyer un autre ?')) {
+            return
+          }
+        }
+        return service.sendMail(this.contact).then(
+          () => {
+            this.alreadySend = true
+            document.getElementById('submit').textContent = 'SUCCESS!!'
+            document.getElementById('submit').setAttribute('disabled', 'true')
+          },
+          err => {
+            document.getElementById('submit').textContent = 'renvoyer'
+            document.getElementById('submit').style.backgroundColor = "orange"
+          }
+        )
       },
     },
     computed: {
@@ -244,6 +257,10 @@
 
   .police_prompt {
     font-family: 'Prompt', sans-serif;
+  }
+
+  h3:hover{
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.76), 0 0 10px rgba(255, 255, 255, 0.747), 0 0 15px rgba(255, 255, 255, 0.726), 0 0 20px #18ffa688, 0 0 30px #18ffa688, 0 0 40px #18ffa688, 0 0 55px #18ffa688, 0 0 75px #18ffa688
   }
 
   header {
@@ -269,12 +286,12 @@
       background-color: black;
 
       a {
-        font-size: 40px;
+        font-size: 35px;
         transition: 0.3s ease-in-out;
 
         &:hover {
-          transform: rotate(360deg);
-
+          transform: scale(1.5);
+          text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px #49FF18, 0 0 40px #49FF18, 0 0 55px #49FF18, 0 0 75px #49ff18
         }
       }
     }
