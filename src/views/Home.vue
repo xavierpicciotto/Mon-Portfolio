@@ -27,23 +27,21 @@
       <div class="presentation">
         <h3 data-aos="fade-right" class="police_lobster aos-init aos-animate">Mon profil:</h3>
         <div class="presentation_box">
-          <img data-aos="fade-right" class="aos-init aos-animate" alt="Une photo de xavier picciotto"
+          <img data-aos="fade-right" id="test" class="aos-init aos-animate" alt="Une photo de xavier picciotto"
             src="../assets/Me.jpg">
           <div class="presentaion_text">
-            <p data-aos="fade-up-rigth" class="police_prompt aos-init aos-animate">Je suis récemment diplômé chez
-              OpenClassrooms d'un titre
+            <p data-aos="fade-up-rigth" class="police_prompt aos-init aos-animate">Je suis diplômé d'un titre
               RNCP (Bac +2) de
               développeur
-              Web Junior. Cette
-              formation en autonomie m’a permis d'acquérir des connaissances dans le développement web notamment sur
-              les
-              langages <strong>HTML, CSS / SASS, Javascript, MySQL</strong>, le framework<strong> Vue </strong>et
+              Web Junior chez Openclassrooms. Cette
+              formation en autonomie m’a permis d'acquérir des compétances dans le développement web comme
+              <strong>HTML, CSS / SASS, Javascript, MySQL</strong>, le framework<strong> Vue </strong>et
               le<strong> SEO</strong>.
             </p>
-            <p data-aos="fade-down-right" class="police_prompt aos-init aos-animate">Je suis capable de créer des
+            <p data-aos="fade-down-right" class="police_prompt aos-init aos-animate">Je peux créer des
               <strong>serveurs</strong>
               avec Javascript et
-              d'utiliser
+              utiliser
               des<strong> API</strong>.
               Implémenter une maquette ou template en<strong> site web</strong>.
               Concevoir et
@@ -87,6 +85,7 @@
             </div>
           </div>
         </div>
+
         <div data-aos="fade-right" class="projet_box aos-init aos-animate">
           <h4>Construire une API sécurisée pour une application d'avis gastronomiques</h4>
           <div v-on:click="enableText(5)" class="projet_dropdown">
@@ -102,7 +101,7 @@
           </div>
         </div>
 
-        <div data-aos="fade-right" class="projet_box aos-init aos-animate">
+        <div v-if="showProject >= 3" data-aos="fade-right" class="projet_box aos-init aos-animate">
           <h4>Construire un site de e-commerce</h4>
           <div v-on:click="enableText(4)" class="projet_dropdown">
             <img src="../assets/p4.png" alt="projet de développement web de xavier picciotto réalizer site e-commerce">
@@ -117,7 +116,7 @@
           </div>
         </div>
 
-        <div data-aos="fade-right" class="projet_box aos-init aos-animate">
+        <div v-if="showProject >= 4" data-aos="fade-right" class="projet_box aos-init aos-animate">
           <h4>Optimiser un site web existant</h4>
           <div v-on:click="enableText(3)" class="projet_dropdown">
             <img src="../assets/p3.png" alt="projet de développement web de xavier picciotto SEO et optimisation">
@@ -134,7 +133,7 @@
           </div>
         </div>
 
-        <div data-aos="fade-right" class="projet_box aos-init aos-animate">
+        <div v-if="showProject >= 5" data-aos="fade-right" class="projet_box aos-init aos-animate">
           <h4>Dynamiser une page web avec des animations CSS</h4>
           <div v-on:click="enableText(2)" class="projet_dropdown">
             <img src="../assets/p2.png"
@@ -151,7 +150,7 @@
           </div>
         </div>
 
-        <div data-aos="fade-right" class="projet_box aos-init aos-animate">
+        <div v-if="showProject >= 6" data-aos="fade-right" class="projet_box aos-init aos-animate">
           <h4>Transformer une maquette en site web</h4>
           <div v-on:click="enableText(1)" class="projet_dropdown">
             <img src="../assets/p1.png" alt="projet de développement web de xavier picciotto réalizer un CV">
@@ -165,7 +164,9 @@
             </div>
           </div>
         </div>
-
+        <div class="button-box">
+          <button v-on:click="displayProject()" id="display-project" type="button">Afficher 4 autres projets</button>
+        </div>
 
       </section>
 
@@ -185,6 +186,9 @@
 
         <div data-aos="fade-right" id="contact" class="contact aos-init aos-animate">
           <h3 class="police_lobster">Contactez moi :</h3>
+          <div v-if="sendReport" id="report" class="message police_prompt">
+            <p>Votre message a bien était envoyé.&#128522;</p>
+          </div>
           <form @submit.prevent="sendEmail" class="form_contact police_prompt" id="form_contact" name="form">
             <label for="name">Nom et prénom :</label>
             <input v-model="contact.name" type="text" name="name" placeholder="Nom Prénom (facultatif)" id="name">
@@ -208,20 +212,32 @@
 <script>
   import Contact from '../models/contact';
   import service from '../service/contact.service';
-
+  
   export default {
     name: 'Home',
     data() {
       return {
         contact: new Contact('', '', '', ''),
         textFocusOn: 0,
+        showProject: 2,
         alreadySend: false,
+        sendReport: false,
+
       }
     },
     components: {
 
     },
     methods: {
+      displayProject: function () {
+        if (this.showProject > 2) {
+          this.showProject = 2
+          document.getElementById('display-project').textContent = 'Afficher 4 autres  projets'
+        } else {
+          document.getElementById('display-project').textContent = '- réduire -'
+          this.showProject += 4
+        }
+      },
       enableText: function (n) {
         return this.textFocusOn == n ? this.textFocusOn = 0 : this.textFocusOn = n
       },
@@ -231,17 +247,9 @@
             return
           }
         }
-        return service.sendMail(this.contact).then(
-          () => {
-            this.alreadySend = true
-            document.getElementById('submit').textContent = 'SUCCESS!!'
-            document.getElementById('submit').setAttribute('disabled', 'true')
-          },
-          err => {
-            document.getElementById('submit').textContent = 'renvoyer'
-            document.getElementById('submit').style.backgroundColor = "orange"
-          }
-        )
+        this.alreadySend = true
+        this.sendReport = true
+        return service.sendMail(this.contact)
       },
     },
     computed: {
@@ -259,7 +267,7 @@
     font-family: 'Prompt', sans-serif;
   }
 
-  h3:hover{
+  h3:hover {
     text-shadow: 0 0 5px rgba(255, 255, 255, 0.76), 0 0 10px rgba(255, 255, 255, 0.747), 0 0 15px rgba(255, 255, 255, 0.726), 0 0 20px #18ffa688, 0 0 30px #18ffa688, 0 0 40px #18ffa688, 0 0 55px #18ffa688, 0 0 75px #18ffa688
   }
 
@@ -323,12 +331,9 @@
 
   .animed-point {
     width: 100%;
-    height: 250px;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 10px 0;
 
     .point {
       width: 6px;
@@ -478,6 +483,32 @@
     }
   }
 
+  .button-box {
+    width: 100%;
+    text-align: center;
+
+    button {
+      cursor: pointer;
+      outline: none;
+      color: rgb(255, 255, 255);
+      font-size: 26px;
+      line-height: 20px;
+      padding: 10px;
+      border-radius: 25px;
+      background-image: linear-gradient(to right, rgb(54, 166, 241) 0%, rgb(18, 151, 240) 50%, #0d52f7 100%);
+      box-shadow: rgba(0, 0, 0, 0.151) 5px 5px 15px 5px;
+      border: 2px solid rgb(255, 255, 255);
+    }
+
+    button:hover {
+      background: #1C6EA4;
+    }
+
+    button:active {
+      background: #144E75;
+    }
+  }
+
   .personal {
     font-size: 1.7em;
     text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.623);
@@ -552,6 +583,13 @@
       font-size: 3vw;
     }
 
+    .message {
+      background-color: rgb(29, 204, 96);
+      border-radius: 15px;
+      text-align: center;
+      width: auto;
+    }
+
     form {
       margin: auto 5%;
       display: flex;
@@ -587,17 +625,15 @@
       }
 
       button {
+        color: white;
         margin: 4% auto;
         box-shadow: inset 0px 1px 0px 0px #a4e271;
         background: linear-gradient(to bottom, #89c403 5%, #77a809 100%);
         background-color: #89c403;
-        border-radius: 6px;
+        border-radius: 15px;
         border: 1px solid #74b807;
-        display: inline-block;
         cursor: pointer;
-        color: #ffffff;
-        font-family: Arial;
-        font-size: 20px;
+        font-size: 30px;
         font-weight: bold;
         padding: 6px 24px;
         text-decoration: none;
