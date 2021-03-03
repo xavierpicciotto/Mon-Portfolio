@@ -1,5 +1,5 @@
 import axios from 'axios'
-
+import API_KEY from './api.key'
 const API_URL = 'https://api.sendinblue.com/v3/smtp/email'
 
 class contact {
@@ -19,7 +19,7 @@ class contact {
                 htmlContent:`<html><head></head><body><p>Hello,</p>${data.message} <br> ${data.entreprise || 'entreprise non renseignée'}</p></body></html>`
         }, {
             headers: {
-                'api-key': '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',
+                'api-key': API_KEY,
                 'accept': 'application/json',
                 'content-type': 'application/json'
             }
