@@ -2,7 +2,7 @@
 node_modules
 /dist
 api.key.js
-
+assets
 
 # local env files
 .env.local
