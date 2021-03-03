@@ -1,0 +1,2 @@
+const API_KEY = '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'
+export default API_KEY
