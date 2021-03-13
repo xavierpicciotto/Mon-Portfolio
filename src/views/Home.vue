@@ -2,10 +2,10 @@
   <div class="home">
     <header>
       <nav class="link-container">
-        <a class="police_lobster" href="#skills">Skills</a>
-        <a class="police_lobster" href="#projets">Projets</a>
-        <a class="police_lobster" href="#cv">CV</a>
-        <a class="police_lobster" href="#contact">Contact</a>
+        <a class="police_lobster" id="indiceSkills" href="#skills">Skills</a>
+        <a class="police_lobster" id="indiceProjets" href="#projets">Projets</a>
+        <a class="police_lobster" id="indiceCv" href="#cv">CV</a>
+        <a class="police_lobster" id="indiceContact" href="#contact">Contact</a>
         <a href="https://github.com/xavierpicciotto?tab=repositories" target="blank">
           <i class="fab fa-github"></i>
         </a>
@@ -15,7 +15,7 @@
       </nav>
       <div class="name">
         <h1 class="police_lobster">Xavier Picciotto</h1>
-        <p>Développeur Web</p>
+        <h2>Développeur Web</h2>
       </div>
     </header>
     <div class="animed-point">
@@ -27,10 +27,11 @@
       <div class="presentation">
         <h3 data-aos="fade-right" class="police_lobster aos-init aos-animate">Mon profil:</h3>
         <div class="presentation_box">
-          <img data-aos="fade-right" id="test" class="aos-init aos-animate" alt="Une photo de xavier picciotto"
+          <img data-aos="fade-right" class="aos-init aos-animate" alt="Une photo de xavier picciotto"
             src="../assets/Me.jpg">
           <div class="presentaion_text">
-            <p data-aos="fade-up-rigth" class="police_prompt aos-init aos-animate">Je suis diplômé d'un titre
+            <h4>Soif d'apprendre et de Créer</h4>
+            <p id="description" data-aos="fade-up-rigth" class="police_prompt aos-init aos-animate">Je suis diplômé d'un titre
               RNCP (Bac +2) de
               développeur
               Web Junior chez Openclassrooms. Cette
@@ -55,34 +56,68 @@
           </div>
         </div>
       </div>
-      <section id="skills" class="skills">
-        <h3 data-aos="zoom-in-right" class="police_lobster aos-init aos-animate">Mes compétences en tant que Développeur
+      <section class="skills">
+        <h3 id="skills" data-aos="zoom-in-right"  class="police_lobster aos-init aos-animate">Mes compétences en tant que Développeur
           Web</h3>
         <div data-aos="zoom-out-right" class="flex-container aos-init aos-animate">
-          <div class="skills_box"><img src='../assets/html.jpg' alt="logo html"></div>
-          <div class="skills_box"><img src='../assets/css.png' alt="logo css"></div>
-          <div class="skills_box"><img src='../assets/JS.jpg' alt="logo js"></div>
-          <div class="skills_box"><img src='../assets/mysql.jpg' alt="logo MySql"></div>
-          <div class="skills_box"><img src='../assets/vue.jpg' alt="logo Vue"></div>
-          <div class="skills_box"><img src='../assets/nodejs.jpg' alt="logo nodeJs"></div>
-          <div class="skills_box"><img src='../assets/mongodb.jpg' alt="logo mongodb"></div>
+          <div class="skill_block">
+            <h4>Langage Web</h4>
+            <div class="skill_block-container">
+              <div class="skills_box"><img src='../assets/html.jpg' alt="logo html"></div>
+              <div class="skills_box"><img src='../assets/css.png' alt="logo css"></div>
+              <div class="skills_box"><img src='../assets/JS.jpg' alt="logo js"></div>
+            </div>
+          </div>
+          <div class="skill_block">
+            <h4>Framework</h4>
+            <div class="skill_block-container">
+              <div class="skills_box"><img src='../assets/vue.jpg' alt="logo Vue"></div>
+              <div class="skills_box"><img src='../assets/express.png' alt="logo express"></div>
+            </div>
+          </div>
+          <div class="skill_block">
+            <h4>Databases</h4>
+            <div class="skill_block-container">
+              <div class="skills_box"><img src='../assets/mysql.jpg' alt="logo MySql"></div>
+              <div class="skills_box"><img src='../assets/mongodb.jpg' alt="logo mongodb"></div>
+            </div>
+          </div>
+          <div class="skill_block">
+            <h4>librairie / logiciel</h4>
+            <div class="skill_block-container">
+              <div class="skills_box"><img src='../assets/nodejs.jpg' alt="logo nodeJs"></div>
+              <div class="skills_box"><img src='../assets/jwt.png' alt="logo jwt"></div>
+              <div class="skills_box"><img src='../assets/bcrypt.jpg' alt="logo bcrypt"></div>
+              <div class="skills_box"><img src='../assets/postman.png' alt="logo postman"></div>
+            </div>
+          </div>
+          <div class="skill_block">
+            <h4>Cloud service</h4>
+            <div class="skill_block-container">
+              <div class="skills_box"><img src='../assets/firebase.png' alt="logo firebase"></div>
+              <div class="skills_box"><img src='../assets/cloudflare.png' alt="logo cloudflare"></div>
+            </div>
+          </div>
         </div>
       </section>
-      <section class="projets" id="projets">
-        <h3 class="police_lobster">Mes projets :</h3>
-        <div data-aos="fade-right" class="projet_box aos-init aos-animate">
+      <section  class="projets">
+        <h3 id="projets" class="police_lobster">Mes projets :</h3>
+        <div data-aos="fade-right"  class="projet_box aos-init aos-animate">
           <h4>Créer un réseau social d’entreprise.</h4>
           <div v-on:click="enableText(6)" class="projet_dropdown">
             <img src="../assets/p6.png"
               alt="projet de développement web de xavier picciotto réaliser un réseau social d’entreprise">
-            <div v-if="textFocusOn == 6" class="projet_text">
-              <p>-Personnaliser le contenu envoyé à un client web.</p>
-              <p>-Gérer un stockage de données à l'aide de SQL.</p>
-              <p>-Implémenter un stockage de données sécurisé en utilisant SQL.</p>
-              <p>-Authentifier un utilisateur et maintenir sa session.</p>
-              <div class="lien_git"><a href="https://github1s.com/xavierpicciotto/Projet-7" target="blank">Voir le code
-                  du projet</a></div>
-            </div>
+            <transition name="bounce">
+              <div v-if="textFocusOn == 6" class="projet_text">
+                <p>-Personnaliser le contenu envoyé à un client web.</p>
+                <p>-Gérer un stockage de données à l'aide de SQL.</p>
+                <p>-Implémenter un stockage de données sécurisé en utilisant SQL.</p>
+                <p>-Authentifier un utilisateur et maintenir sa session.</p>
+                <div class="lien_git"><a href="https://github1s.com/xavierpicciotto/Projet-7" target="blank">Voir le
+                    code
+                    du projet</a></div>
+              </div>
+            </transition>
           </div>
         </div>
 
@@ -91,13 +126,16 @@
           <div v-on:click="enableText(5)" class="projet_dropdown">
             <img src="../assets/p5.png"
               alt="projet de développement web de xavier picciotto Construire un API sécurisée">
-            <div v-if="textFocusOn == 5" class="projet_text">
-              <p>-Mettre en œuvre des opérations CRUD (create, read, update, delete) de manière sécurisée.</p>
-              <p>-Stocker des données de manière sécurisée.</p>
-              <p>-Implémenter un modèle logique de données conformément à la réglementation.</p>
-              <div class="lien_git"><a href="https://github1s.com/xavierpicciotto/Projet-6" target="blank">Voir le code
-                  du projet</a></div>
-            </div>
+            <transition name="bounce">
+              <div v-if="textFocusOn == 5" class="projet_text">
+                <p>-Mettre en œuvre des opérations CRUD (create, read, update, delete) de manière sécurisée.</p>
+                <p>-Stocker des données de manière sécurisée.</p>
+                <p>-Implémenter un modèle logique de données conformément à la réglementation.</p>
+                <div class="lien_git"><a href="https://github1s.com/xavierpicciotto/Projet-6" target="blank">Voir le
+                    code
+                    du projet</a></div>
+              </div>
+            </transition>
           </div>
         </div>
 
@@ -105,14 +143,16 @@
           <h4>Construire un site de e-commerce</h4>
           <div v-on:click="enableText(4)" class="projet_dropdown">
             <img src="../assets/p4.png" alt="projet de développement web de xavier picciotto réalizer site e-commerce">
-            <div v-if="textFocusOn == 4" class="projet_text">
-              <p>-Créer un plan de test pour une application.</p>
-              <p>-Gérer des événements JavaScript.</p>
-              <p>-Interagir avec un web service avec JavaScript.</p>
-              <p>-Valider des données issues de sources externes.</p>
-              <div class="lien_git"><a href="https://github1s.com/xavierpicciotto/Orinoco" target="blank">Voir le code
-                  du projet</a></div>
-            </div>
+            <transition name="bounce">
+              <div v-if="textFocusOn == 4" class="projet_text">
+                <p>-Créer un plan de test pour une application.</p>
+                <p>-Gérer des événements JavaScript.</p>
+                <p>-Interagir avec un web service avec JavaScript.</p>
+                <p>-Valider des données issues de sources externes.</p>
+                <div class="lien_git"><a href="https://github1s.com/xavierpicciotto/Orinoco" target="blank">Voir le code
+                    du projet</a></div>
+              </div>
+            </transition>
           </div>
         </div>
 
@@ -120,16 +160,18 @@
           <h4>Optimiser un site web existant</h4>
           <div v-on:click="enableText(3)" class="projet_dropdown">
             <img src="../assets/p3.png" alt="projet de développement web de xavier picciotto SEO et optimisation">
-            <div v-if="textFocusOn == 3" class="projet_text">
-              <p>-Réaliser une recherche des bonnes pratiques en développement web.</p>
-              <p>-Assurer l'accessibilité d'un site web.</p>
-              <p>-Écrire un code HTML et CSS maintenable.</p>
-              <p>-Optimiser la taille et la vitesse d’un site web.</p>
-              <p>-Optimiser le référencement d'un site web.</p>
-              <div class="lien_git"><a href="https://github1s.com/xavierpicciotto/La-chouette-testing"
-                  target="blank">Voir
-                  le code du projet</a></div>
-            </div>
+            <transition name="bounce">
+              <div v-if="textFocusOn == 3" class="projet_text">
+                <p>-Réaliser une recherche des bonnes pratiques en développement web.</p>
+                <p>-Assurer l'accessibilité d'un site web.</p>
+                <p>-Écrire un code HTML et CSS maintenable.</p>
+                <p>-Optimiser la taille et la vitesse d’un site web.</p>
+                <p>-Optimiser le référencement d'un site web.</p>
+                <div class="lien_git"><a href="https://github1s.com/xavierpicciotto/La-chouette-testing"
+                    target="blank">Voir
+                    le code du projet</a></div>
+              </div>
+            </transition>
           </div>
         </div>
 
@@ -138,15 +180,17 @@
           <div v-on:click="enableText(2)" class="projet_dropdown">
             <img src="../assets/p2.png"
               alt="projet de développement web de xavier picciotto réalizer un menu avec des animation css / sass">
-            <div v-if="textFocusOn == 2" class="projet_text">
-              <p>-Créer une maquette qui répertorie les menus de restaurants gastronomiques en
-                site web responsif.</p>
-              <p>-Mettre en place une structure de navigation pour un site web.</p>
-              <p>-Mettre en œuvre des effets CSS graphiques avancés.</p>
-              <p>-Assurer la cohérence graphique d'un site web.</p>
-              <div class="lien_git"><a href="https://github1s.com/xavierpicciotto/omyfood" target="blank">Voir le code
-                  du projet</a></div>
-            </div>
+            <transition name="bounce">
+              <div v-if="textFocusOn == 2" class="projet_text">
+                <p>-Créer une maquette qui répertorie les menus de restaurants gastronomiques en
+                  site web responsif.</p>
+                <p>-Mettre en place une structure de navigation pour un site web.</p>
+                <p>-Mettre en œuvre des effets CSS graphiques avancés.</p>
+                <p>-Assurer la cohérence graphique d'un site web.</p>
+                <div class="lien_git"><a href="https://github1s.com/xavierpicciotto/omyfood" target="blank">Voir le code
+                    du projet</a></div>
+              </div>
+            </transition>
           </div>
         </div>
 
@@ -154,16 +198,19 @@
           <h4>Transformer une maquette en site web</h4>
           <div v-on:click="enableText(1)" class="projet_dropdown">
             <img src="../assets/p1.png" alt="projet de développement web de xavier picciotto réalizer un CV">
-            <div v-if="textFocusOn == 1" class="projet_text">
-              <p>-Intégrer du contenu conformément à une maquette.</p>
-              <p>-Utiliser un système de gestion de versions pour le suivi du projet et son hébergement.</p>
-              <p>-Mettre en place son environnement Front-End.</p>
-              <p>-Implémenter une interface responsive.</p>
-              <div class="lien_git"><a href="https://github1s.com/xavierpicciotto/xavierpicciotto" target="blank">Voir
-                  le code du projet</a></div>
-            </div>
+            <transition name="bounce">
+              <div v-if="textFocusOn == 1" class="projet_text">
+                <p>-Intégrer du contenu conformément à une maquette.</p>
+                <p>-Utiliser un système de gestion de versions pour le suivi du projet et son hébergement.</p>
+                <p>-Mettre en place son environnement Front-End.</p>
+                <p>-Implémenter une interface responsive.</p>
+                <div class="lien_git"><a href="https://github1s.com/xavierpicciotto/xavierpicciotto" target="blank">Voir
+                    le code du projet</a></div>
+              </div>
+            </transition>
           </div>
         </div>
+
         <div class="button-box">
           <button v-on:click="displayProject()" id="display-project" type="button">Afficher 4 autres projets</button>
         </div>
@@ -172,8 +219,8 @@
 
       <section class="personal">
 
-        <div data-aos="fade-right" id="cv" class="cv aos-init aos-animate">
-          <h3 class="police_lobster">Mon CV :</h3>
+        <div data-aos="fade-right"  class="cv aos-init aos-animate">
+          <h3 id="cv" class="police_lobster">Mon CV :</h3>
           <div class="img-box">
             <a href="../Xavier_picciotto_CV.pdf" target="blank">
               <img src="../assets/CV.jpg" alt="Mon CV de développeur web format jpg">
@@ -184,8 +231,8 @@
           </div>
         </div>
 
-        <div data-aos="fade-right" id="contact" class="contact aos-init aos-animate">
-          <h3 class="police_lobster">Contactez moi :</h3>
+        <div data-aos="fade-right"  class="contact aos-init aos-animate">
+          <h3 id="contact" class="police_lobster">Contactez moi :</h3>
           <div v-if="sendReport" id="report" class="message police_prompt">
             <p>Votre message a bien été envoyé.&#128522;</p>
           </div>
@@ -212,7 +259,7 @@
 <script>
   import Contact from '../models/contact';
   import service from '../service/contact.service';
-  
+
   export default {
     name: 'Home',
     data() {
@@ -225,10 +272,48 @@
 
       }
     },
-    components: {
+    mounted() {
+      function isInViewport(el) {
+        const rect = el.getBoundingClientRect();
+        return (
+          rect.top >= 0 &&
+          rect.left >= 0 &&
+          rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+          rect.right <= (window.innerWidth || document.documentElement.clientWidth)
 
+        );
+      }
+      const skills = document.getElementById('skills')
+      const projets = document.getElementById('projets')
+      const cv = document.getElementById('cv')
+      const contact = document.getElementById('contact')
+      const indiceContact = document.getElementById('indiceContact')
+      const indiceCv = document.getElementById('indiceCv')
+      const indiceProjets = document.getElementById('indiceProjets') 
+      const indiceSkills = document.getElementById('indiceSkills')
+      const description = document.getElementById('description')
+      
+      document.addEventListener('scroll', function () {
+        isInViewport(skills) ? setIndice(indiceSkills)  : isInViewport(projets) ? setIndice(indiceProjets) :
+        isInViewport(cv) ? setIndice(indiceCv) :
+        isInViewport(contact) ? setIndice(indiceContact) : isInViewport(description) ? setIndice(0) : ""
+      }, {
+        passive: true
+      })
+
+       let lastIndice;
+       function setIndice(el) {
+       lastIndice !== undefined ? lastIndice.removeAttribute('class','indiceSection'):""
+       if (el !== 0) {
+         el.setAttribute('class','indiceSection')
+         lastIndice = el
+       } else {
+         lastIndice = undefined
+       }
+      }
     },
     methods: {
+
       displayProject: function () {
         if (this.showProject > 2) {
           this.showProject = 2
@@ -252,9 +337,6 @@
         return service.sendMail(this.contact)
       },
     },
-    computed: {
-
-    }
   }
 </script>
 
@@ -271,6 +353,11 @@
     text-shadow: 0 0 5px rgba(255, 255, 255, 0.76), 0 0 10px rgba(255, 255, 255, 0.747), 0 0 15px rgba(255, 255, 255, 0.726), 0 0 20px #18ffa688, 0 0 30px #18ffa688, 0 0 40px #18ffa688, 0 0 55px #18ffa688, 0 0 75px #18ffa688
   }
 
+  .indiceSection {
+    transform: scale(1.2);
+    text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #04ffeadc, 0 0 30px #04ffeadc, 0 0 40px #04ffeadc, 0 0 55px #04ffeadc, 0 0 75px #04ffeadc
+  }
+
   header {
     display: flex;
     flex-direction: column;
@@ -281,6 +368,10 @@
       font-size: 2.5vw;
       text-shadow: 2px 5px 5px black;
       animation: pendulum 2s infinite alternate ease-in-out;
+
+      h2 {
+        font-size: 0.9em;
+      }
     }
 
     .link-container {
@@ -358,13 +449,17 @@
   }
 
   .skills {
-    margin: 10% 10%;
 
     h3 {
       text-align: center;
       font-size: 3vw;
       margin-top: auto;
       margin-bottom: 5%;
+    }
+
+    h4 {
+      font-size: 20px;
+      text-align: center;
     }
 
     .flex-container {
@@ -386,7 +481,7 @@
         box-shadow: 4px 6px 3px rgba(0, 0, 0, 0.37);
 
         &:hover {
-          animation: newFocus 0.6s forwards ease-in-out;
+          animation: flip 0.5s forwards ease-in-out;
         }
       }
     }
@@ -654,7 +749,7 @@
   }
 
   //--Responsive--
-  @media only screen and (max-width: 900px) {
+  @media only screen and (max-width: 1000px) {
 
     header {
       flex-direction: column;
@@ -716,16 +811,26 @@
     .skills {
       margin: auto;
 
+      .flex-container {
+        flex-direction: column;
+      }
+
       h3 {
         font-size: 30px;
       }
 
+      .skill_block-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
       .skills_box {
-        margin: 10px 15px;
+        margin: 10px 35px;
 
         img {
-          width: 65px;
-          height: 65px;
+          width: 75px;
+          height: 75px;
         }
       }
 
@@ -858,15 +963,45 @@
     }
   }
 
-  @keyframes growing {
+  @keyframes flip {
     from {
-      transform: translate(0%, 50%);
-      transform: scale(0);
+      transform: rotateY(0deg);
     }
 
     to {
-      transform: translate(0%, 0%);
+      transform: rotateY(360deg);
+    }
+  }
+
+  .bounce-enter-active {
+    animation: bounce-in .5s;
+  }
+
+  .bounce-leave-active {
+    animation: bounce-in .5s reverse;
+  }
+
+  @keyframes bounce-in {
+    0% {
+      transform: scale(0);
+    }
+
+    50% {
+      transform: scale(1.2);
+    }
+
+    100% {
       transform: scale(1);
     }
+  }
+
+  .fade-enter-active,
+  .fade-leave-active {
+    transition: opacity 1.5s;
+  }
+
+  .fade-enter,
+  .fade-leave-to {
+    opacity: 0;
   }
 </style>
