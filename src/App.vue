@@ -6,7 +6,7 @@
 <script>
 export default {
     created(){
-      if(this.$route.path !== "/"){
+      if(this.$route.path !== "/" && this.$route.path !== "/picciotto-xm"){
         this.$router.push("/");
       }
     }

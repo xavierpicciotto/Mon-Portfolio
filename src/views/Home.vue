@@ -14,53 +14,34 @@
         </a>
       </nav>
       <div class="name">
+        <img data-aos="fade-right" class="aos-init aos-animate" alt="Une photo de xavier picciotto"
+          src="../assets/nme-min.jpg">
         <h1 class="police_lobster">Xavier Picciotto</h1>
         <h2>Développeur Web</h2>
       </div>
     </header>
-    <div class="animed-point">
-      <div class="point"></div>
-      <div class="point"></div>
-      <div class="point"></div>
-    </div>
     <main>
       <div class="presentation">
-        <h3 data-aos="fade-right" class="police_lobster aos-init aos-animate">Mon profil:</h3>
+        <div id="description"></div>
+        <h3 data-aos="fade-right" class="aos-init aos-animate">Mon profil:</h3>
         <div class="presentation_box">
-          <img data-aos="fade-right" class="aos-init aos-animate" alt="Une photo de xavier picciotto"
-            src="../assets/Me.jpg">
           <div class="presentaion_text">
-            <h4>Soif d'apprendre et de Créer</h4>
-            <p id="description" data-aos="fade-up-rigth" class="police_prompt aos-init aos-animate">Je suis diplômé d'un titre
-              RNCP (Bac +2) de
-              développeur
-              Web Junior chez Openclassrooms. Cette
-              formation en autonomie m’a permis d'acquérir des compétances dans le développement web comme
-              <strong>HTML, CSS / SASS, Javascript, MySQL</strong>, le framework<strong> Vue </strong>et
-              le<strong> SEO</strong>.
-            </p>
-            <p data-aos="fade-down-right" class="police_prompt aos-init aos-animate">Je peux créer des
-              <strong>serveurs</strong>
-              avec Javascript et
-              utiliser
-              des<strong> API</strong>.
-              Implémenter une maquette ou template en<strong> site web</strong>.
-              Concevoir et
-              administrer des<strong> bases de données</strong>.<br> Je suis une personne <strong>calme</strong> avec un
-              bon sens de la
-              déduction et
-              de <strong>l'adaptation</strong>.
-              J'aime particulièrement le <strong>travail en équipe</strong> et coopératif. Passionné de vulgarisation
-              scientifique dans
-              tous les domaines depuis mon plus jeune âge.</p>
+            <p>Après une reconversion dans le développement web j'ai suivi une formation chez Openclassrooms qui m'a
+              ouvert
+              au métier du web et à la programmation. Depuis je développe mes compétences en Javascript et le secteur
+              du
+              backend que j'affectionne particulièrement.</p>
+            <p>Mes meilleures compétences: <strong>JavaScript</strong>, <strong>Express</strong>,
+              <strong>Vue.js</strong></p>
           </div>
         </div>
       </div>
       <section class="skills">
-        <h3 id="skills" data-aos="zoom-in-right"  class="police_lobster aos-init aos-animate">Mes compétences en tant que Développeur
+        <h3 data-aos="zoom-in-right" class="police_lobster aos-init aos-animate">Mes compétences en tant que
+          Développeur
           Web</h3>
         <div data-aos="zoom-out-right" class="flex-container aos-init aos-animate">
-          <div class="skill_block">
+          <div id="skills" class="skill_block">
             <h4>Langage Web</h4>
             <div class="skill_block-container">
               <div class="skills_box"><img src='../assets/html.jpg' alt="logo html"></div>
@@ -100,9 +81,43 @@
           </div>
         </div>
       </section>
-      <section  class="projets">
+      <section class="projets">
         <h3 id="projets" class="police_lobster">Mes projets :</h3>
-        <div data-aos="fade-right"  class="projet_box aos-init aos-animate">
+        <div class="myServer">
+          <router-link to="/picciotto-xm">
+            <h4>Testez l'API de mon serveur privé 🙂</h4>
+            <h4>cliquez ici pour y accéder</h4>
+          </router-link>
+        </div>
+        <div class="linkServer">
+          <a href="https://picciotto-xm.tech/" target="_blank" rel="noopener noreferrer">
+            <h3>https://picciotto-xm.tech/</h3>
+          </a>
+        </div>
+        <!--Picciotto-xm.tech-->
+        <div data-aos="fade-right" class="projet_box aos-init aos-animate">
+          <h4>Picciotto-xm.tech</h4>
+          <div v-on:click="enableText(7)" class="projet_dropdown">
+            <img src="../assets/picciotto-xm.png"
+              alt="projet de développement web de xavier picciotto réaliser un server privé">
+            <transition name="bounce">
+              <div v-if="textFocusOn == 7" class="projet_text">
+                <p>-Configuration de A à Z d'un vps Ubuntu 20.04 avec Ngix et Pm2</p>
+                <p>-CRUD Utilisateur sécurisé.</p>
+                <p>-Envoie d'emails serveur.</p>
+                <p>-Rendu HTML côté serveur.</p>
+                <p>-Database MySQL</p>
+                <p>*Cloné plus de 49fois sur github*</p>
+                <div class="lien_git"><a href="https://github.com/xavierpicciotto/picciotto-server" target="blank">Voir
+                    le
+                    code
+                    du projet</a></div>
+              </div>
+            </transition>
+          </div>
+        </div>
+        <!--Projet 7-->
+        <div data-aos="fade-right" class="projet_box aos-init aos-animate">
           <h4>Créer un réseau social d’entreprise.</h4>
           <div v-on:click="enableText(6)" class="projet_dropdown">
             <img src="../assets/p6.png"
@@ -174,7 +189,6 @@
             </transition>
           </div>
         </div>
-
         <div v-if="showProject >= 5" data-aos="fade-right" class="projet_box aos-init aos-animate">
           <h4>Dynamiser une page web avec des animations CSS</h4>
           <div v-on:click="enableText(2)" class="projet_dropdown">
@@ -210,29 +224,27 @@
             </transition>
           </div>
         </div>
-
         <div class="button-box">
           <button v-on:click="displayProject()" id="display-project" type="button">Afficher 4 autres projets</button>
         </div>
 
       </section>
-
+      <div id="cv"></div>
       <section class="personal">
-
-        <div data-aos="fade-right"  class="cv aos-init aos-animate">
-          <h3 id="cv" class="police_lobster">Mon CV :</h3>
+        <div data-aos="fade-right" class="cv aos-init aos-animate">
+          <h3 class="police_lobster">Mon CV :</h3>
           <div class="img-box">
+            <p>Maintenir la photo du CV appuyé puis cliquer sur "télécharger le fichier".<br>(mobiles)</p>
             <a href="../Xavier_picciotto_CV.pdf" target="blank">
               <img src="../assets/CV.jpg" alt="Mon CV de développeur web format jpg">
             </a>
-            <p>Maintenir la photo du CV appuyé puis cliquer sur "télécharger le fichier".<br>(mobiles)</p>
             <a href="../Xavier_picciotto_CV.pdf" download="Xavier_picciotto_CV.pdf"><button type="button"
                 class="police_prompt">Télécharger <i class="fas fa-download"></i></button></a>
           </div>
         </div>
-
-        <div data-aos="fade-right"  class="contact aos-init aos-animate">
-          <h3 id="contact" class="police_lobster">Contactez moi :</h3>
+        <div id="contact"></div>
+        <div data-aos="fade-right" class="contact aos-init aos-animate">
+          <h3 class="police_lobster">Contactez moi :</h3>
           <div v-if="sendReport" id="report" class="message police_prompt">
             <p>Votre message a bien été envoyé.&#128522;</p>
           </div>
@@ -273,44 +285,50 @@
       }
     },
     mounted() {
-      function isInViewport(el) {
-        const rect = el.getBoundingClientRect();
-        return (
-          rect.top >= 0 &&
-          rect.left >= 0 &&
-          rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-          rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+      this.$nextTick(() => {
+        const skills = document.getElementById('skills')
+        const projets = document.getElementById('projets')
+        const cv = document.getElementById('cv')
+        const contact = document.getElementById('contact')
+        const indiceContact = document.getElementById('indiceContact')
+        const indiceCv = document.getElementById('indiceCv')
+        const indiceProjets = document.getElementById('indiceProjets')
+        const indiceSkills = document.getElementById('indiceSkills')
+        const description = document.getElementById('description')
 
-        );
-      }
-      const skills = document.getElementById('skills')
-      const projets = document.getElementById('projets')
-      const cv = document.getElementById('cv')
-      const contact = document.getElementById('contact')
-      const indiceContact = document.getElementById('indiceContact')
-      const indiceCv = document.getElementById('indiceCv')
-      const indiceProjets = document.getElementById('indiceProjets') 
-      const indiceSkills = document.getElementById('indiceSkills')
-      const description = document.getElementById('description')
-      
-      document.addEventListener('scroll', function () {
-        isInViewport(skills) ? setIndice(indiceSkills)  : isInViewport(projets) ? setIndice(indiceProjets) :
-        isInViewport(cv) ? setIndice(indiceCv) :
-        isInViewport(contact) ? setIndice(indiceContact) : isInViewport(description) ? setIndice(0) : ""
-      }, {
-        passive: true
+        function isInViewport(el) {
+          try {
+            const rect = el.getBoundingClientRect();
+            return (
+              rect.top >= 0 &&
+              rect.left >= 0 &&
+              rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+              rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+          } catch {
+            console.log("err")
+          }
+        }
+        document.addEventListener('scroll', function () {
+          isInViewport(skills) ? setIndice(indiceSkills) : isInViewport(projets) ? setIndice(indiceProjets) :
+            isInViewport(cv) ? setIndice(indiceCv) : isInViewport(contact) ? setIndice(indiceContact) :
+            isInViewport(description) ? setIndice(0) : ""
+        }, {
+          passive: true
+        })
+
+        let lastIndice;
+
+        function setIndice(el) {
+          lastIndice !== undefined ? lastIndice.removeAttribute('class', 'indiceSection') : ""
+          if (el !== 0) {
+            el.setAttribute('class', 'indiceSection')
+            lastIndice = el
+          } else {
+            lastIndice = undefined
+          }
+        }
       })
-
-       let lastIndice;
-       function setIndice(el) {
-       lastIndice !== undefined ? lastIndice.removeAttribute('class','indiceSection'):""
-       if (el !== 0) {
-         el.setAttribute('class','indiceSection')
-         lastIndice = el
-       } else {
-         lastIndice = undefined
-       }
-      }
     },
     methods: {
 
@@ -350,7 +368,7 @@
   }
 
   h3:hover {
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.76), 0 0 10px rgba(255, 255, 255, 0.747), 0 0 15px rgba(255, 255, 255, 0.726), 0 0 20px #18ffa688, 0 0 30px #18ffa688, 0 0 40px #18ffa688, 0 0 55px #18ffa688, 0 0 75px #18ffa688
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.356), 0 0 10px rgba(255, 255, 255, 0.356), 0 0 15px rgba(255, 255, 255, 0.356), 0 0 20px #6200ff50, 0 0 30px #ea07ff54, 0 0 40px #181cff38, 0 0 55px #18ffa688, 0 0 75px #18ffa688
   }
 
   .indiceSection {
@@ -364,10 +382,18 @@
 
     .name {
       text-align: center;
-      margin: 2.5%;
-      font-size: 2.5vw;
+      margin: 3.5% 10% 0%;
       text-shadow: 2px 5px 5px black;
-      animation: pendulum 2s infinite alternate ease-in-out;
+      font-size: 4vh;
+
+      img {
+        width: 400px;
+        height: auto;
+        float: left;
+        border-radius: 25%;
+        box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.685);
+        animation: pendulum 2s infinite alternate ease-in-out;
+      }
 
       h2 {
         font-size: 0.9em;
@@ -396,55 +422,23 @@
     }
   }
 
+  h3 {
+    margin: 1% 0%;
+  }
+
   .presentation {
-    margin: 5% 10%;
-    font-size: 1.6em;
-    text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.623);
+    float: right;
+    font-size: 2em;
+    margin: 0 10%;
+    text-shadow: 2px 3px 2px 2px rgb(0, 0, 0);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
     h3 {
       font-size: 3vw;
     }
 
-    img {
-      float: left;
-      width: 35%;
-      min-width: 250px;
-      height: auto;
-      margin-right: 5%;
-      border-radius: 4%;
-      box-shadow: 0px 5px 50px 5px rgba(255, 255, 255, 0.267);
-    }
-
     p {
       text-align: left;
-    }
-  }
-
-  .animed-point {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    .point {
-      width: 6px;
-      height: 6px;
-      margin: auto;
-      border-radius: 50%;
-      background-color: rgb(255, 255, 255);
-      box-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 15px, #73d8f6 0px 0px 20px, #3e9bf1 0px 0px 30px, #36bee7 0px 0px 40px, #4f68f6 0px 0px 50px, #fafafa 0px 0px 75px;
-      animation-name: blinks;
-      animation-duration: 0.6s;
-      animation-iteration-count: infinite;
-      animation-timing-function: ease-in-out;
-    }
-
-    .point:nth-child(1) {
-      animation-delay: 0.2s;
-    }
-
-    .point:nth-child(2) {
-      animation-delay: 0.4s;
     }
   }
 
@@ -453,8 +447,6 @@
     h3 {
       text-align: center;
       font-size: 3vw;
-      margin-top: auto;
-      margin-bottom: 5%;
     }
 
     h4 {
@@ -488,7 +480,23 @@
   }
 
   .projets {
-    margin: 5% 10%;
+    margin: 5% 6.5%;
+
+    .myServer {
+      width: 75%;
+      margin: auto;
+      color: rgb(0, 183, 255);
+      background-image: -webkit-linear-gradient(0deg, #ffffff 0%, #fad7a0 100%);
+      border-radius: 25px;
+      box-shadow: 3px 5px 3px rgba(0, 0, 0, 0.5);
+      &:hover {
+        animation: newFocus 0.2s forwards ease-in-out;
+      }
+    }
+
+    .linkServer {
+      text-align: center;
+    }
 
     h3 {
       font-size: 3vw;
@@ -754,16 +762,18 @@
     header {
       flex-direction: column;
 
+
       .name {
         font-size: 3.50vh;
         margin-top: 10%;
 
-        h1 {
-          margin: 0;
+        img {
+          width: 200px;
+          float: none;
         }
 
-        p {
-          font-size: 4.5vh;
+        h1 {
+          margin: 0;
         }
       }
 
@@ -783,28 +793,12 @@
         text-align: center;
       }
 
-      img {
-        float: none;
-        margin: 0;
-        width: 100%;
-        max-width: 400px;
-        border-radius: 10px;
-      }
-
       h3 {
         font-size: 30px;
       }
-    }
 
-
-    .animed-point {
-      height: auto;
-      flex-direction: row;
-      margin: -10px;
-
-      .point {
-        width: 3px;
-        height: 3px;
+      p {
+        margin: 0% 5% 5%;
       }
     }
 
@@ -873,7 +867,7 @@
 
         p {
           display: block;
-          font-size: 15px;
+          font-size: 21px;
         }
 
         h3 {
@@ -882,10 +876,11 @@
 
         .img-box {
           width: 100%;
-          max-width: 650px;
           margin: auto;
-          text-align: center;
 
+          img {
+            width: 50%;
+          }
         }
 
         img:hover {
@@ -922,16 +917,6 @@
   }
 
   //---Animations---
-  @keyframes blinks {
-    from {
-      box-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 15px, #73d8f6 0px 0px 20px, #3e9bf1 0px 0px 30px, #36bee7 0px 0px 40px, #4f68f6 0px 0px 50px, #fafafa 0px 0px 75px;
-    }
-
-    to {
-      box-shadow: #FFF 0px 0px 5px, #1c24d7 0px 0px 10px, #FFF 0px 0px 15px, #73d8f6 0px 0px 20px, #3e9bf1 0px 0px 30px, #36bee7 0px 0px 40px, #4f68f6 0px 0px 50px, #fafafa 0px 0px 75px;
-    }
-  }
-
   @keyframes jumps {
     from {
       transform: translate(0px, 0px);
@@ -944,11 +929,13 @@
 
   @keyframes pendulum {
     from {
-      transform: translate(0px, 0px) scale(1);
+      border-radius: 25%;
+      box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.685);
     }
 
     to {
-      transform: translate(0px, 5px) scale(1.005);
+      border-radius: 50%;
+      box-shadow: 6px 6px 6px 6px rgba(2, 255, 116, 0.685);
     }
   }
 
