@@ -13,10 +13,10 @@
           <i class="fab fa-linkedin"></i>
         </a>
       </nav>
-      <div class="name">
-        <img data-aos="fade-right" class="aos-init aos-animate" alt="Une photo de xavier picciotto"
+      <div class="name" itemtype="https://schema.org/Person">
+        <img itemprop="image" data-aos="fade-right" class="aos-init aos-animate" alt="Une photo de xavier picciotto"
           src="../assets/nme-min.jpg">
-        <h1 class="police_lobster">Xavier Picciotto</h1>
+        <h1 itemprop="familyName" class="police_lobster">Xavier Picciotto</h1>
         <h2>Développeur Web</h2>
       </div>
     </header>
@@ -61,15 +61,6 @@
             <div class="skill_block-container">
               <div class="skills_box"><img src='../assets/mysql.jpg' alt="logo MySql"></div>
               <div class="skills_box"><img src='../assets/mongodb.jpg' alt="logo mongodb"></div>
-            </div>
-          </div>
-          <div class="skill_block">
-            <h4>librairie / logiciel</h4>
-            <div class="skill_block-container">
-              <div class="skills_box"><img src='../assets/nodejs.jpg' alt="logo nodeJs"></div>
-              <div class="skills_box"><img src='../assets/jwt.png' alt="logo jwt"></div>
-              <div class="skills_box"><img src='../assets/bcrypt.jpg' alt="logo bcrypt"></div>
-              <div class="skills_box"><img src='../assets/postman.png' alt="logo postman"></div>
             </div>
           </div>
           <div class="skill_block">
@@ -473,7 +464,7 @@
         box-shadow: 4px 6px 3px rgba(0, 0, 0, 0.37);
 
         &:hover {
-          animation: flip 0.5s forwards ease-in-out;
+          animation: flip 0.4s infinite alternate-reverse forwards ease-in-out;
         }
       }
     }
@@ -952,11 +943,12 @@
 
   @keyframes flip {
     from {
-      transform: rotateY(0deg);
+      transform: rotateZ(0deg);
     }
 
     to {
-      transform: rotateY(360deg);
+      transform: rotateZ(360deg);
+      opacity: 0.2;
     }
   }
 
