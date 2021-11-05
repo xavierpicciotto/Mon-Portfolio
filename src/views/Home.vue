@@ -26,11 +26,7 @@
         <h3 data-aos="fade-right" class="aos-init aos-animate">Mon profil:</h3>
         <div class="presentation_box">
           <div class="presentaion_text">
-            <p>Après une reconversion dans le développement web j'ai suivi une formation chez Openclassrooms qui m'a
-              ouvert
-              au métier du web et à la programmation. Depuis je développe mes compétences en Javascript et le secteur
-              du
-              backend que j'affectionne particulièrement.</p>
+            <p>Après une reconversion dans le développement web, diplôme obtenu en 2020. Je n'ai de cesse de développer mes compétences dans ce domaine, notamment le backend avec Node js Javascript / Typescript. Je sais aussi faire du Frontend avec le Framework Vue .js.J'aimerais trouver un premier emploi dans ce secteur. Je suis éligible POEI / AFPR avec Pôle emplois, vous pouvez me demander plus de renseignements en priver</p>
             <p>Mes meilleures compétences: <strong>JavaScript</strong>, <strong>Express</strong>,
               <strong>Vue.js</strong></p>
           </div>
