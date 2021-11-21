@@ -15,7 +15,7 @@
       </nav>
       <div class="name" itemtype="https://schema.org/Person">
         <img itemprop="image" data-aos="fade-right" class="aos-init aos-animate" alt="Une photo de xavier picciotto"
-          src="../assets/nme-min.jpg">
+          src="../assets/me.jpg">
         <h1 itemprop="familyName" class="police_lobster">Xavier Picciotto</h1>
         <h2>Développeur Web</h2>
       </div>
@@ -26,12 +26,13 @@
         <h3 data-aos="fade-right" class="aos-init aos-animate">Mon profil:</h3>
         <div class="presentation_box">
           <div class="presentaion_text">
-            <p>Après une reconversion dans le développement web j'ai suivi une formation chez Openclassrooms qui m'a
-              ouvert
-              au métier du web et à la programmation. Depuis je développe mes compétences en Javascript et le secteur
-              du
-              backend que j'affectionne particulièrement.</p>
-            <p>Mes meilleures compétences: <strong>JavaScript</strong>, <strong>Express</strong>,
+            <p>Après une reconversion dans le développement web, diplôme obtenu en 2021. Je n'ai de cesse de développer
+              mes compétences dans ce domaine qui me passionne, notamment le Backend avec Node.js Javascript /
+              Typescript, MySQL pour les bases de données et du Frontend avec le Framework Vue.js.
+              J'aimerais trouver un premier emploi dans ce secteur. Je suis éligible POEI / AFPR avec Pôle emplois (aide
+              aux entreprises pour accepter et former des jeunes à leurs premières expériences), vous pouvez me demander
+              plus de renseignements en priver.</p>
+            <p>Mes meilleures compétences: <strong>JavaScript</strong>, <strong>Express</strong>,<strong>MySQL</strong>,
               <strong>Vue.js</strong></p>
           </div>
         </div>
@@ -76,8 +77,7 @@
         <h3 id="projets" class="police_lobster">Mes projets :</h3>
         <div class="myServer">
           <router-link to="/picciotto-xm">
-            <h4>Testez l'API de mon serveur privé 🙂</h4>
-            <h4>cliquez ici pour y accéder</h4>
+            <h4>Testez l'API de mon serveur privé en cliquant ici</h4>
           </router-link>
         </div>
         <div class="linkServer">
@@ -476,10 +476,12 @@
     .myServer {
       width: 75%;
       margin: auto;
-      color: rgb(0, 183, 255);
-      background-image: -webkit-linear-gradient(0deg, #ffffff 0%, #fad7a0 100%);
-      border-radius: 25px;
+      padding: 10px;
+      color: rgb(17, 188, 255);
+      background-image: -webkit-linear-gradient(0deg, #ffffff 0%, #ffffff45 100%);
+      border-radius: 8px;
       box-shadow: 3px 5px 3px rgba(0, 0, 0, 0.5);
+
       &:hover {
         animation: newFocus 0.2s forwards ease-in-out;
       }
@@ -925,8 +927,8 @@
     }
 
     to {
-      border-radius: 50%;
-      box-shadow: 6px 6px 6px 6px rgba(2, 255, 116, 0.685);
+      border-radius: 30%;
+      box-shadow: 5px 5px 5px 5px rgba(28, 218, 113, 0.685);
     }
   }
 

@@ -1,12 +1,12 @@
 <template>
     <div class="picciotto-xm">
         <h1>Bienvenue sur la page de test de mon serveur privé</h1>
-            <router-link to="/">
-                <button class="retour" type="button">Retour accueil</button>
-            </router-link>
+        <router-link to="/">
+            <button class="retour" type="button">Retour accueil</button>
+        </router-link>
         <div class="fonctionalite">
             <div class="user card">
-                <h2>CRUD utilisateur :</h2>
+                <h2>CRUD utilisateur</h2>
                 <div class="inscription">
                     <div class="switch">
                         <h3 v-if="!connected" v-on:click="switchMode('inscription')" id="mode_insc">Inscription</h3>
@@ -72,15 +72,15 @@
                 </div>
             </div>
             <div class="email card">
-                <h2>Envoie d'email serveur :</h2>
-                <h3>confirmer votre email</h3>
+                <h2>Envoie d'email serveur</h2>
+                <h3>Testez la confirmation d'email</h3>
                 <label for="email">Votre email :</label><br>
                 <div class="box_input"><input v-model="email" type="email" placeholder="exemple@test.com"></div>
                 <p>L'email serra suprimé du serveur après 5min ou une fois validé.</p>
                 <div class="box_btn"><button v-on:click="emailConfirmation" type="button" class="register_email"
                         id="register_email">Envoyer une
                         vérification</button></div><br>
-                <label for="code">Code de confirmation</label>
+                <label for="code">Code de confirmation :</label>
                 <div class="box_input">
                     <input v-model="code" type="text" placeholder="ex: 0123">
                 </div>
@@ -126,14 +126,14 @@
                 if (data == 'inscription') {
                     this.inscription = true
                     this.connection = false
-                    inscription.style.color = "#00f578"
-                    connection.style.color = "#00a9f9"
+                    inscription.style.textDecoration = "underline";
+                    connection.style.textDecoration = "none";
                 }
                 if (data == 'connection') {
                     this.inscription = false
                     this.connection = true
-                    connection.style.color = "#00f578"
-                    inscription.style.color = "#00a9f9"
+                    inscription.style.textDecoration = "none";
+                    connection.style.textDecoration = "underline";
                 }
             },
             userAuth() {
@@ -269,15 +269,18 @@
         text-align: center;
         margin-bottom: 3%;
     }
-    .retour{
+
+    .retour {
         cursor: pointer;
         margin: 1%;
+        padding: 10px;
         font-size: 20px;
         color: cornflowerblue;
         background-color: rgb(247, 247, 247);
-        border:3px solid cornflowerblue;
+        border: 3px solid cornflowerblue;
         border-radius: 15px;
     }
+
     .fonctionalite {
         display: flex;
         justify-content: space-around;
@@ -288,15 +291,16 @@
         margin-top: 2%;
         font-size: 20px;
         padding: 1%;
-        background: linear-gradient(to bottom, #4b4b4b 5%, #010229 100%);
-        border-radius: 30px;
-        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.733);
+        background-color: #fffdffe6;
+        border-radius: 50px;
+        box-shadow: 3px 4px 5px rgba(0, 0, 0, 0.116);
+        text-shadow: none;
 
         h2 {
             margin-top: 0;
             margin-bottom: 0;
             text-align: center;
-            color: rgb(0, 240, 20);
+            color: #54a8ff;
         }
 
         .switch {
@@ -305,7 +309,11 @@
 
             h3 {
                 cursor: pointer;
-                color: rgb(0, 119, 255);
+                color: rgb(255, 255, 255);
+                padding: 10px;
+                background-color: rgb(74, 160, 235);
+                border-radius: 10px;
+                box-shadow:  3px 2px rgba(0, 0, 0, 0.219);
 
                 &:hover {
                     transform: scale(1.2);
@@ -314,12 +322,17 @@
             }
 
             h3:nth-child(1) {
-                color: #00f578;
+                text-decoration: underline;
             }
+        }
+
+        h3 {
+            color: #444444e0;
         }
 
         h4 {
             text-align: center;
+            color: black;
         }
 
         label {
@@ -334,18 +347,20 @@
 
         input {
             background-color: rgb(250, 250, 250);
-            width: 80%;
+            width: 92%;
             text-align: center;
             font-size: 25px;
-            border-radius: 15px;
-            border-style: none;
-            outline: none;
+            border-radius: 50px;
+            border-style: solid;
+            border-color: rgba(0, 0, 0, 0.075);
+            outline-color: cornflowerblue;
             color: cornflowerblue;
             transition-duration: 0.8s;
         }
 
         p {
-            margin-top: 0;
+            color: black;
+            margin-top: 1%;
             text-align: center;
             width: 100%;
         }
@@ -363,15 +378,15 @@
             button {
                 cursor: pointer;
                 font-size: 30px;
-                border-radius: 5px;
+                border-radius: 10px;
                 border-style: none;
-                box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.671);
+                box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.233);
                 color: white;
-                background-color: rgb(0, 132, 255);
-
+                background-color: #57c78c;
+                transition-duration: 0.5s;
                 &:hover {
-                    background-color: rgb(0, 73, 190);
-                    transform: scale(1.05);
+                    background-color: #53dd94;
+                    transform: scale(1.1);
                 }
             }
 
@@ -393,15 +408,19 @@
 
     @media only screen and (max-width: 650px) {
         h1 {
-            font-size: 13px;
+            font-size: 20px;
         }
-
+        
         h2 {
-            font-size: 18px;
+            font-size: 23px;
         }
 
         h3 {
             font-size: 18px;
+        }
+
+        .retour{
+            font-size: 15px;
         }
 
         .fonctionalite {
@@ -410,9 +429,9 @@
         }
 
         .card {
-            width: 100%;
-            margin-bottom: 5%;
-
+            width: 94%;
+            margin-bottom: 10%;
+            border-radius: 15px;
             input {
                 font-size: 17px;
             }
@@ -422,8 +441,9 @@
             }
 
             .box_btn {
+                margin-bottom: 5%;
                 button {
-                    font-size: 24px;
+                    font-size: 23px;
                 }
             }
         }
