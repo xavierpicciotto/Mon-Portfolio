@@ -75,11 +75,11 @@
       </section>
       <section class="projets">
         <h3 id="projets" class="police_lobster">Mes projets :</h3>
-        <div class="myServer">
-          <router-link to="/picciotto-xm">
+        <router-link to="/picciotto-xm">
+         <div class="myServer">
             <h4>Testez l'API de mon serveur privé en cliquant ici</h4>
-          </router-link>
-        </div>
+         </div>
+        </router-link>
         <div class="linkServer">
           <a href="https://picciotto-xm.tech/" target="_blank" rel="noopener noreferrer">
             <h3>https://picciotto-xm.tech/</h3>
@@ -237,7 +237,7 @@
         <div data-aos="fade-right" class="contact aos-init aos-animate">
           <h3 class="police_lobster">Contactez moi :</h3>
           <div v-if="sendReport" id="report" class="message police_prompt">
-            <p>Votre message a bien été envoyé.&#128522;</p>
+            <p>Votre message a bien été envoyé.</p>
           </div>
           <form @submit.prevent="sendEmail" class="form_contact police_prompt" id="form_contact" name="form">
             <label for="name">Nom et prénom :</label>
@@ -474,12 +474,11 @@
     margin: 5% 6.5%;
 
     .myServer {
-      width: 75%;
+      width: 80%;
       margin: auto;
-      padding: 10px;
-      color: rgb(17, 188, 255);
-      background-image: -webkit-linear-gradient(0deg, #ffffff 0%, #ffffff45 100%);
-      border-radius: 8px;
+      padding: 15px;
+      background-color: #497fe0;
+      border-radius: 10px;
       box-shadow: 3px 5px 3px rgba(0, 0, 0, 0.5);
 
       &:hover {
@@ -590,7 +589,7 @@
       font-size: 26px;
       line-height: 20px;
       padding: 10px;
-      border-radius: 25px;
+      border-radius: 10px;
       background-image: linear-gradient(to right, rgb(54, 166, 241) 0%, rgb(18, 151, 240) 50%, #0d52f7 100%);
       box-shadow: rgba(0, 0, 0, 0.151) 5px 5px 15px 5px;
       border: 2px solid rgb(255, 255, 255);
@@ -680,10 +679,11 @@
     }
 
     .message {
-      background-color: rgb(29, 204, 96);
-      border-radius: 15px;
+      background-color: #5fcc37;
+      border-radius: 5px;
       text-align: center;
       width: auto;
+      box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.424); 
     }
 
     form {
