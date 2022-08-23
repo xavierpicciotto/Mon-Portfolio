@@ -388,7 +388,7 @@
       }
 
       img {
-        width: 266px;
+        width: 300px;
         height: auto;
         border-radius: 5%;
         box-shadow: 5px 5px 5px 5px rgba(255, 255, 255, 0.685);

@@ -25,7 +25,7 @@
                         <label for="password">Password :</label><br>
                         <div class="box_input"><input autocomplete="new-password" required v-model="userNew.password"
                                 type="password" name="password" id="password" placeholder="Entrer un password"></div>
-                        <p>Le Password doit contenir aux moins 4 caractères et une majuscule.</p>
+                        <p>Le Password doit contenir aux moins 4 caractères dont une majuscule.</p>
                         <label v-if="inscription" for="confirm-password">Confirm password :</label><br>
                         <div v-if="inscription" class="box_input"><input autocomplete="new-password" required
                                 v-model="userNew.passwordVerif" type="password" name="confirm-password"
