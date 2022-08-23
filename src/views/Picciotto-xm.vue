@@ -55,7 +55,7 @@
                             <div class="box_input"><input autocomplete="new-password" v-model="userNew.password"
                                     type="password" name="password" id="password" placeholder="Entrer un password">
                             </div>
-                            <p>Le Password doit contenir aux moins 4 caractères et une majuscule.</p>
+                            <p>Le Password doit contenir aux moins 4 caractères dont une majuscule.</p>
                             <div class="box_btn">
                                 <button type="submit">Modifier les changements</button><br>
                                 <button v-on:click="modifyUser = false" type="button" class="deconexion">X</button>
@@ -89,12 +89,32 @@
                         id="verifCode">Vérifier</button></div>
                 <h4 class="emailMsg"> {{emailMsg}} </h4>
             </div>
+            <div class="messagerie card">
+                <h2>Messagerie</h2>
+                <button v-on:click=connectionMessagerie() v-if="!this.messagerie.connected"
+                    class="start_messagerie_btn">Tester l'app</button>
+                <div class="messagerie_user">
+                    <div v-if="this.messagerie.userNumber" class="messagerie_userNumber">Votre numéros
+                        :{{messagerie.userNumber}}</div>
+                    <div class="messagerie_fonction">
+                        <button v-on:click="receiveMessage()">nouveau message</button>
+                    </div>
+                    <div class="userChat">
+                        <div class="chat" id="chat"></div>
+                        <input id="sendMessage" type="text"><button v-on:click=sendMessage()>Envoyer</button>
+                    </div>
+                    <div class="contacts" id="messagerie_cantacts"></div>
+                </div>
+            </div>
         </div>
     </div>
 </template>
+
 <script>
     import axios from 'axios'
-
+    import io from 'socket.io-client';
+    let socket = ""
+    
     export default {
         name: "Picciotto-xm",
         data() {
@@ -107,6 +127,13 @@
                 user: {
                     user_name: '',
                     id: ''
+                },
+                messagerie: {
+                    userNumber: '',
+                    contacts: [],
+                    messages: [],
+                    connected: false,
+                    listen:"",
                 },
                 signupMsg: '',
                 signinMsg: '',
@@ -260,8 +287,45 @@
                     })
                 }
             },
+            connectionMessagerie() {
+                if (socket === "") {
+                    socket = io('http://localhost:3000/')
+                    this.messagerie.connected = true
+                    io.on('chat message', function (msg) {
+                    console.log("retour")
+                    this.receiveMessage(msg)
+                    })
+                }
+            },
+            sendMessage() {
+                let message = document.getElementById('sendMessage')
+                let chat = document.getElementById('chat')
+                if (message.value !== "") {
+                    console.log(socket, message.value)
+                    socket.emit('chat message', message.value)
+                    let item = document.createElement('li')
+                    item.textContent = message.value
+                    chat.appendChild(item)
+                    message.value = ""
+                }
+            },
+            receiveMessage(msg) {
+                let chat = document.getElementById('chat')
+                let item = document.createElement('li')
+                console.log(msg)
+                item.textContent = msg;
+                chat.appendChild(item);
+                window.scrollTo(0, document.body.scrollHeight);
+            },
+            listenMessage() {
+                console.log("listen")
+                this.receiveMessage("listen")
+                socket.on('chat message', function (msg) {
+                    console.log("re " + msg)
+                    this.receiveMessage(msg)
+                });
+            }
         }
-
     }
 </script>
 <style lang="scss" scoped>
@@ -282,10 +346,15 @@
     }
 
     .fonctionalite {
+        width: 100%;
+        height: auto;
         display: flex;
         justify-content: space-around;
+        flex-wrap: wrap;
     }
-
+    .messagerie{
+        display: none;
+    }
     .card {
         width: 40%;
         margin-top: 2%;
@@ -313,7 +382,7 @@
                 padding: 10px;
                 background-color: rgb(74, 160, 235);
                 border-radius: 10px;
-                box-shadow:  3px 2px rgba(0, 0, 0, 0.219);
+                box-shadow: 3px 2px rgba(0, 0, 0, 0.219);
 
                 &:hover {
                     transform: scale(1.2);
@@ -384,6 +453,7 @@
                 color: white;
                 background-color: #57c78c;
                 transition-duration: 0.5s;
+
                 &:hover {
                     background-color: #53dd94;
                     transform: scale(1.1);
@@ -410,7 +480,7 @@
         h1 {
             font-size: 20px;
         }
-        
+
         h2 {
             font-size: 23px;
         }
@@ -419,7 +489,7 @@
             font-size: 18px;
         }
 
-        .retour{
+        .retour {
             font-size: 15px;
         }
 
@@ -432,6 +502,7 @@
             width: 94%;
             margin-bottom: 10%;
             border-radius: 15px;
+
             input {
                 font-size: 17px;
             }
@@ -442,6 +513,7 @@
 
             .box_btn {
                 margin-bottom: 5%;
+
                 button {
                     font-size: 23px;
                 }

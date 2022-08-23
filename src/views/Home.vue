@@ -14,10 +14,16 @@
         </a>
       </nav>
       <div class="name" itemtype="https://schema.org/Person">
-        <img itemprop="image" data-aos="fade-right" class="aos-init aos-animate" alt="Une photo de xavier picciotto"
-          src="../assets/me.jpg">
-        <h1 itemprop="familyName" class="police_lobster">Xavier Picciotto</h1>
-        <h2>Développeur Web</h2>
+        <div class="name-box">
+          <img itemprop="image" data-aos="fade-right" class="aos-init aos-animate" alt="Une photo de xavier picciotto"
+            src="../assets/me.jpg">
+          <div class="name-text">
+            <h1 itemprop="familyName" class="police_lobster">Xavier</h1>
+            <h1 itemprop="familyName" class="police_lobster">Picciotto</h1>
+            <h2>Développeur Web</h2>
+          </div>
+        </div>
+        
       </div>
     </header>
     <main>
@@ -27,11 +33,9 @@
         <div class="presentation_box">
           <div class="presentaion_text">
             <p>Après une reconversion dans le développement web, diplôme obtenu en 2021. Je n'ai de cesse de développer
-              mes compétences dans ce domaine qui me passionne, notamment le Backend avec Node.js Javascript /
-              Typescript, MySQL pour les bases de données et du Frontend avec le Framework Vue.js.
-              J'aimerais trouver un premier emploi dans ce secteur. Je suis éligible POEI / AFPR avec Pôle emplois (aide
-              aux entreprises pour accepter et former des jeunes à leurs premières expériences), vous pouvez me demander
-              plus de renseignements en priver.</p>
+              mes compétences dans ce domaine qui me passionne.
+              Je cherche un premier emploi pour lancer ma carrière. Si jamais faire une AFPR avec Pôle emploi.
+              Je suis une personne sérieuse, investie, passionnée de sciences et ouverte d'esprit.</p>
             <p>Mes meilleures compétences: <strong>JavaScript</strong>, <strong>Express</strong>,<strong>MySQL</strong>,
               <strong>Vue.js</strong></p>
           </div>
@@ -76,15 +80,10 @@
       <section class="projets">
         <h3 id="projets" class="police_lobster">Mes projets :</h3>
         <router-link to="/picciotto-xm">
-         <div class="myServer">
+          <div class="myServer ">
             <h4>Testez l'API de mon serveur privé en cliquant ici</h4>
-         </div>
+          </div>
         </router-link>
-        <div class="linkServer">
-          <a href="https://picciotto-xm.tech/" target="_blank" rel="noopener noreferrer">
-            <h3>https://picciotto-xm.tech/</h3>
-          </a>
-        </div>
         <!--Picciotto-xm.tech-->
         <div data-aos="fade-right" class="projet_box aos-init aos-animate">
           <h4>Picciotto-xm.tech</h4>
@@ -368,6 +367,7 @@
   }
 
   header {
+    margin: auto;
     display: flex;
     flex-direction: column;
 
@@ -377,12 +377,21 @@
       text-shadow: 2px 5px 5px black;
       font-size: 4vh;
 
+      .name-box {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .name-text{
+        margin: auto;
+      }
+
       img {
-        width: 400px;
+        width: 266px;
         height: auto;
-        float: left;
-        border-radius: 25%;
-        box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.685);
+        border-radius: 5%;
+        box-shadow: 5px 5px 5px 5px rgba(255, 255, 255, 0.685);
         animation: pendulum 2s infinite alternate ease-in-out;
       }
 
@@ -476,18 +485,16 @@
     .myServer {
       width: 80%;
       margin: auto;
+      margin-top: 5%;
       padding: 15px;
-      background-color: #497fe0;
       border-radius: 10px;
-      box-shadow: 3px 5px 3px rgba(0, 0, 0, 0.5);
+      background-image: linear-gradient(to right, #36a6f1 0%, #1297f0 50%, #0d52f7 100%);
+      box-shadow: 5px 5px 15px 3px #f400df8a;
+      border: 2px solid #ffffffe0;
 
       &:hover {
         animation: newFocus 0.2s forwards ease-in-out;
       }
-    }
-
-    .linkServer {
-      text-align: center;
     }
 
     h3 {
@@ -525,7 +532,7 @@
     .projet_box {
       width: 100%;
       height: 25%;
-      margin: 10% auto;
+      margin: 5% auto;
 
       img {
         width: 100%;
@@ -683,7 +690,7 @@
       border-radius: 5px;
       text-align: center;
       width: auto;
-      box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.424); 
+      box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.424);
     }
 
     form {
@@ -757,11 +764,11 @@
 
 
       .name {
-        font-size: 3.50vh;
-        margin-top: 10%;
+        font-size: 2.5vh;
+        margin-top: 5% 5%;
 
         img {
-          width: 200px;
+          width: 160px;
           float: none;
         }
 
@@ -922,12 +929,10 @@
 
   @keyframes pendulum {
     from {
-      border-radius: 25%;
       box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.685);
     }
 
     to {
-      border-radius: 30%;
       box-shadow: 5px 5px 5px 5px rgba(28, 218, 113, 0.685);
     }
   }
